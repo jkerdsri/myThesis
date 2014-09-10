@@ -1,0 +1,173 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% SIIT Thesis Style
+%
+% Normally there is no need to edit this file. It should be called, using
+% \usepackage{siitthesis}, from thesis.tex.  
+%
+% \SVN $Revision: 840 $
+% \SVN $Author: sgordon $
+% \SVN $Date: 2014-05-12 13:39:14 +0700 (Mon, 12 May 2014) $
+% \SVN $URL: https://sandilands.info/svn/Common/Styles/siitthesis/siitthesis.sty $
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\NeedsTeXFormat{LaTeX2e}[1998/12/01]
+\ProvidesPackage{siitthesis}[2014/05/12 v0.1 SIIT Thesis Style]
+
+% Required packages
+\RequirePackage{setspace} % Need for line spacing on title/signature page
+\RequirePackage{mathptmx} % Times font for text and math
+\RequirePackage{listings} % Include formatted source code listings (this package 
+                      % is not actually needed, however if you remove it then
+                      % you must comment out all references to listings in 
+                      % this file and in thesis.tex)
+
+% Page layout
+\setlength{\oddsidemargin}{0.188in}  % 1.15in left margin 
+\setlength{\evensidemargin}{0.188in} % 1.15in left margin (even pages)
+\setlength{\topmargin}{0.0in}       % 1in top margin
+\setlength{\textwidth}{6.085in}       % 5.76in text - 1.25in rt margin
+\setlength{\textheight}{9.69in}        % Body ht for 1in margins
+\addtolength{\topmargin}{-\headheight}  % No header, so compensate
+\addtolength{\topmargin}{-\headsep} % for header height and separation
+\flushbottom
+
+% Rename Tables and References
+\renewcommand{\bibname}{References}
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\lstlistlistingname}{List of Listings}
+
+% Start TeX commands
+\makeatletter
+
+% Add space after chapters in TOC
+\renewcommand\chapter{%
+\if@mainmatter
+  \addtocontents{toc}{\protect\addvspace{15\p@}}%
+\fi
+\if@openright\cleardoublepage\else\clearpage\fi
+                    \thispagestyle{plain}%
+                    \global\@topnum\z@
+                    \@afterindentfalse
+                    \secdef\@chapter\@schapter}
+
+% For appendices, include appendix letter in TOC and heading
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+                       \if@mainmatter
+                         \refstepcounter{chapter}%
+                         \typeout{\@chapapp\space\thechapter.}%
+                         \addcontentsline{toc}{chapter}%
+                                   {\protect\numberline{\thechapter}#1}%
+                       \else
+                         \refstepcounter{chapter}%
+                         \typeout{\@chapapp\space\thechapter.}%
+                         \addcontentsline{toc}{section}%
+{\@chapapp\space\thechapter:\space#1}%
+                       \fi
+                    \else
+                      \addcontentsline{toc}{chapter}{#1}%
+                    \fi
+                    \chaptermark{#1}%
+                    \addtocontents{lof}{\protect\addvspace{10\p@}}%
+                    \addtocontents{lot}{\protect\addvspace{10\p@}}%
+                    \if@twocolumn
+                      \@topnewpage[\@makechapterhead{#2}]%
+                    \else
+                      \@makechapterhead{#2}%
+                      \@afterheading
+                    \fi}
+
+% Change font size of chapter headings
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \centering \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \LARGE\bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+      \else
+        \LARGE\bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \LARGE \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+
+% Change font size of chapter* headings
+\def\@makeschapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \centering
+    \normalfont
+    \interlinepenalty\@M
+    \LARGE \bfseries  #1\par\nobreak
+    \vskip 40\p@
+  }}
+
+% Add headings for table of contents, list of figures and tables
+\renewcommand\tableofcontents{%
+  \parindent\z@
+  \chapter*{\contentsname}
+  \vskip 12\p@  
+  \textbf{\large Chapter Title\hfill Page}
+  \vskip 12\p@
+  \@starttoc{toc}%
+}
+\renewcommand\listoffigures{%
+  \parindent\z@
+  \chapter*{\listfigurename}
+  \vskip 12\p@  
+  \textbf{\large Figure\hfill Page}
+  \vskip 12\p@
+  \@starttoc{lof}%
+}
+\renewcommand\listoftables{%
+  \parindent\z@
+  \chapter*{\listtablename}
+  \vskip 12\p@  
+  \textbf{\large Table\hfill Page}
+  \vskip 12\p@
+  \@starttoc{lot}%
+}
+
+\renewcommand*{\lstlistoflistings}{%
+  \chapter*{\lstlistlistingname}
+  \vskip 12\p@  
+  \textbf{\large Listing\hfill Page}
+  \vskip 12\p@
+  \@starttoc{lol}%
+}
+
+
+% Add space in table of contents when starting backmatter
+\renewcommand\backmatter{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \@mainmatterfalse%
+\addtocontents{toc}{\protect\addvspace{15\p@}}
+}
+
+% Format/width of TOC lines
+\renewcommand{\@dotsep}{10000}
+\renewcommand*\l@chapter{\@dottedtocline{1}{1.8em}{2.4em}}
+\renewcommand*\l@section{\@dottedtocline{2}{4.2em}{1.8em}}
+\renewcommand*\l@subsection{\@dottedtocline{3}{6.0em}{2.4em}}
+\renewcommand*\l@figure{\@dottedtocline{1}{1.8em}{2.4em}}
+
+% Font sizes
+\renewcommand\large{\@setfontsize\large{13}{17}}
+\renewcommand\Large{\@setfontsize\Large{14}{18}}
+\renewcommand\LARGE{\@setfontsize\LARGE{15}{19}}
+\renewcommand\huge{\@setfontsize\LARGE{17}{21}}
+
+% End TeX Commands
+\makeatother
+

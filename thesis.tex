@@ -1,0 +1,324 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% SIIT Thesis Template
+%
+% Instructions
+% 1. In this file (thesis.tex) you should edit:
+%    a. Thesis Data, e.g. title, author
+%    b. Committee members on the Signatures page
+%    c. Chapters, adding/deleting chapters
+%    d. Appendices, adding/deleting appendices
+%
+% 2. Optionally, in this file you may edit:
+%    a. Packages, adding/deleting required LaTeX packages
+%    b. Authors Commands, adding/deleting your own LaTeX commands
+%    c. Remove the inclusion of acrynoms
+%    d. References, to switch from using BibTeX to a .bbl file
+% 
+% 3. The main content of the thesis should be in the following files:
+%    a. ack.tex
+%    b. abstract.tex
+%    c. acronyms.tex (optional)
+%    d. chapter1.tex, chapter2.tex, ...
+%    e. appendixA.tex, appendixB.tex, ...
+%    f. refs.bib (if using BibTeX) or refs.tex (if manual editing refs)
+%
+% \SVN $Revision: 840 $
+% \SVN $Author: sgordon $
+% \SVN $Date: 2014-05-12 13:39:14 +0700 (Mon, 12 May 2014) $
+% \SVN $URL: https://sandilands.info/svn/Common/Styles/siitthesis/thesis.tex $
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\documentclass[12pt,a4paper,oneside]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% Packages
+% (add/remove packages as needed)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+% Required packages for thesis layout (do not remove)
+\usepackage{siitthesis} % Commands for formatting according SIIT thesis style
+
+% Other packages (add/delete packages as desired)
+\usepackage{graphicx}
+\usepackage{svn}
+\usepackage[plainpages=false]{hyperref}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% Thesis Data
+% (edit each field)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Thesis Title in mixed case
+\newcommand{\thesistitle}{High performance  Opportunistic Routing Algorithms for power constrained nodes with message delivery deadline in Sparse network environment}
+
+% Student name (author of the thesis)
+\newcommand{\thesisauthor}{Jiradett Kerdsri}
+
+% Degree that this thesis is for
+\newcommand{\thesisdegree}{Doctor of Philosophy Program in Engineering and Technology}
+
+% Month and year of thesis publication (obtained from SIIT)
+\newcommand{\thesisdate}{December 2014}
+
+% Academic year for thesis submission
+\newcommand{\thesisyear}{2014}
+
+% Institute/department
+\newcommand{\thesisinstitute}{Sirindhorn International Institute of Technology}
+
+% University
+\newcommand{\thesisuni}{Thammasat University}
+
+% Degrees that student already has; separate degrees with \\
+\newcommand{\thesispastdegrees}{Bachelor of Civil Engineering, Royal Thai Air Force Academy, 1999\\Master of Science in Computer, Naval Postgraduate School, 2003\\Master of Geographic Information Technology, University of Melbourne, 2009}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% Authors Commands
+% (optionally include your own LaTeX commands here; some examples are
+%  included)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% Format of code listing fors ML (package: listings)
+\lstdefinelanguage[]{CPNML}[]{ML}{morekeywords={colset}}
+\lstset{%
+language=CPNML,
+basicstyle=\footnotesize,
+columns=flexible,
+}
+
+%% Note for editor/advisor, e.g. \ednote{Add a new paragraph}
+\newcommand{\ednote}[1]{\textbf{Edit: #1}}
+
+%% Graphics path and formats (package: graphicx). Add directories that contain
+%% figures that you want to include
+\graphicspath{{./}{./figures/}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% Title Page
+% (do not edit)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{document}
+\frontmatter
+\setlength{\parskip}{0pt plus1pt minus1pt}
+
+\pagestyle{empty}
+\begin{center}
+\vspace*{6mm}
+\begin{spacing}{1.4}
+\textbf{\Large\MakeUppercase\thesistitle}
+\end{spacing}
+\vspace*{35mm}
+\textbf{BY}\\
+\vspace*{17mm}
+\textbf{\MakeUppercase\thesisauthor}
+\vfill
+\begin{spacing}{1.3}
+\textbf{
+A THESIS SUBMITTED IN PARTIAL FULFILLMENT OF\\
+THE REQUIREMENTS FOR THE DEGREE OF\\
+\MakeUppercase\thesisdegree\\
+\MakeUppercase\thesisinstitute\\
+\MakeUppercase\thesisuni\\
+ACADEMIC YEAR \thesisyear\\
+}
+\end{spacing}
+\end{center}
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% Signatures
+% (only edit the table of thesis committee)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\pagestyle{plain}
+\setcounter{page}{1}
+\addcontentsline{toc}{section}{Signature Page}
+\vspace*{2mm}
+\begin{center}
+\textbf{\MakeUppercase\thesistitle}\\
+\vspace*{17mm}
+A Thesis Presented\\
+\vspace*{8mm}
+By\\
+\vspace*{2mm}
+\MakeUppercase\thesisauthor\\
+\vspace*{12mm}
+\begin{spacing}{1.3}
+Submitted to\\
+\thesisinstitute\\
+\thesisuni\\
+In partial fulfillment of the requirement for the degree of\\
+\MakeUppercase\thesisdegree
+\end{spacing}
+\end{center}
+\vfill
+~Approved as to style and content by\\[-2ex]
+\begin{table}[h]
+\setlength{\tabcolsep}{0.7ex}
+\begin{tabular}{lll}
+%%============================================================================
+%% Example for Masters Thesis
+%Advisor and&& \\ \cline{3-3}
+%Chairperson of Thesis Committee    &&Assoc. Prof. Steven Gordon, Ph.D.\\[3ex]
+%Committee Member and&&\\ \cline{3-3}
+%Chairperson of Examination Committee&&Assoc.\ Prof.\  Komwut Wipusitwarakun, Ph.D.\\[3ex]
+%Committee Member&&\\ \cline{3-3}
+%&&Asst.\ Prof.\ Somsak Vanit-Anunchai, Ph.D.\\[3ex]
+%%============================================================================
+%% Example for PhD Thesis
+Advisor and&& \\ \cline{3-3}
+Chairperson of Thesis Committee&&Assoc.\ Prof.\  Komwut Wipusitwarakun, Ph.D.\\[3ex]
+Committee Member and&&\\ \cline{3-3}
+Chairperson of Examination Committee&&Assoc. Prof. Steven Gordon, Ph.D.\\[3ex]
+Committee Member&&\\ \cline{3-3}
+&&Asst.\ Prof.\ Prapun Suksompong, Ph.D.\\[3ex]
+Committee Member&&\\ \cline{3-3}
+&&Asst.\ Prof.\ Somsak Kittipiyakul, Ph.D.\\[3ex]
+External Examiner:&&Prof. xx xxxx, Ph.D.\\[3ex]
+%%============================================================================
+\end{tabular}
+\end{table}\\
+\centerline{\MakeUppercase\thesisdate}
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% Acknowledgement
+% (do not edit here; instead edit the file ack.tex)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\addcontentsline{toc}{section}{Acknowledgments}
+\chapter*{Acknowledgments}
+\input{ack}
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% Abstract
+% (do not edit here; instead edit the file abstract.tex)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\addcontentsline{toc}{section}{Abstract}
+\chapter*{Abstract}
+\begin{center}
+\MakeUppercase\thesistitle\\
+\vspace*{7mm}
+by\\
+\vspace*{7mm}
+\thesisauthor
+\end{center}
+\vspace*{0mm}
+\begin{flushleft}
+\thesispastdegrees
+\vspace*{5mm}
+\end{flushleft}
+
+\input{abstract}
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% Table of Contents, Figures and Tables
+% (comment/uncomment any tables/lists that you desire)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\addcontentsline{toc}{section}{Table of Contents}
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\newpage
+\addcontentsline{toc}{section}{List of Listings}
+\lstlistoflistings
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% List of Acronyms
+% (do not edit here; instead edit the file acronyms.tex)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\addcontentsline{toc}{section}{List of Acronyms}
+\chapter*{List of Acronyms}
+\input{acronyms}
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% Chapters
+% (edit the files chapter1.tex, chapter2.tex, ...)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\mainmatter
+\setlength{\parindent}{0.25in}
+\clearpage
+\input{chapter1}
+\input{chapter2}
+\input{chapter3}
+\input{chapter4}    
+\input{chapter5}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% References
+% (\bibliography refers to your BibTeX .bib file, e.g. refs.bib)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\backmatter
+\cleardoublepage % needed to ensure TOC page number is correct
+%% There is still a bug with the PDF hyperlink: clicking on the References
+%% link in the PDF takes you to last page of previous chapter, not to start
+%% of references
+\addcontentsline{toc}{section}{References}
+
+%% These two commands are for when using BibTeX (i.e. most common)
+%% Change 'refs' to be the name of your .bib file
+\bibliographystyle{abbrv}
+\bibliography{refs}
+
+%% In the final version of your thesis you may copy the generated .bbl file
+%% to a .tex file (e.g. copy thesis.bbl to refs.tex) and input that .tex 
+%% file. This allows you to make minor manual edits to the references.
+%% Uncomment the following line; comment out the two above commands.
+%\input{refs}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+% Appendices
+% (edit the files appendixA.tex, appendixB.tex, ...)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\appendix
+\input{appendixA}
+%\input{appendixB}
+%\input{appendixC}
+
+\end{document}
+

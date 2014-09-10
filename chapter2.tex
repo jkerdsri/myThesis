@@ -1,0 +1,166 @@
+\chapter{Background and Related Work}
+\label{bg}
+% \SVN $Revision: 838 $
+% \SVN $Author: sgordon $
+% \SVN $Date: 2014-05-12 13:30:42 +0700 (Mon, 12 May 2014) $
+% \SVN $URL: https://sandilands.info/svn/Common/Styles/siitthesis/chapter2.tex $
+
+Recently, wireless networking are witnessing several deployments in various extreme environments where they usually suffer from different levels of link disruptions depending on the severity of the operations. 
+Commonly, these networks are known as Intermittently Connected Networks (ICNs). 
+An ICNs, also known as a Challenged Network, is an infrastructure-less wireless network that supports the proper functionality of the wireless applications operating in stressful environments, where excessive delays and no existence of end-to-end path(s) between any arbitrary source-destination pair, result from highly repetitive link disruptions \cite{Khabbaz2012}.
+In order to handle ICNs, the Internet Engineering Task Force (IETF) \cite{Doe:2009:Online} proposed an architecture called Delay-/Disruption-Tolerant Networks (DTNs).
+DTNs can basically be categorized into 3 types: scheduled networks, predictable networks and opportunistic networks.
+In this thesis, we focus on the research on the most extreme case of DTNs which is the opportunistic networks.
+
+This chapter gives the background knowledge of this thesis. 
+The background of Delay Tolerant Networks is presented in Section~\ref{bg:Delay Tolerant Networks}. 
+Additionally, an explanation of Opportunistic Networks is presented in Section~\ref{bg:Opportunistic Networks}. 
+%=============================================================================
+\section{Delay Tolerant Networks}
+\label{bg:Delay Tolerant Networks}
+%=============================================================================
+DTNs is an overlay architecture with an aim to operate over the protocol stacks of the ICNs and enable gateway functionality between them through the use of storage capacity, a variety of protocol techniques, replication and parallel forwarding, forward error correction and many other techniques for overcoming the impairments of communication  \cite{Khabbaz2012}.
+DTNs enable the transferring of data in extremely challenging environments where networks are assumed to experience frequent, long-duration partitioning and may have no end-to-end connectivity between source and destination \cite{Liu2011}. 
+Therefore, the timer and acknowledgement mechanisms of the traditional TCP/IP protocol definitely fail in such circumstances \cite{Souza2010}.
+In addition, the routing algorithms designed for Mobile Ad hoc NETworks (MANETs) can not perform effectively under aforementioned constraints as well, since the availability of contemporaneous end-to-end connectivity is essential for conventional routing algorithms \cite{6196145}.
+
+Basically the types of DTNs can be classified in 3 categories: scheduled networks, predictable networks and opportunistic networks as seen in Figure~\ref{fig:bg:Type of DTN}.
+In DTNs, predictable and scheduled networks are the common aim in designing the routing protocols in the highly disruptive environments such as Interplanetary Internet (IPN) \cite{1204759} where the contact time is not completely random but in periodic interval.
+In the thesis, we study in the most extreme case of DTNs which is the opportunistic networks where the contact time is undetermined along with stochastic movements.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\columnwidth]{Figures/TypeOfDTN.pdf}
+\caption{Types of DTN}
+\label{fig:bg:Type of DTN}
+\end{figure} 
+
+
+%=============================================================================
+\section{Opportunistic Networks}
+\label{bg:Opportunistic Networks}
+%=============================================================================
+In fact, Opportunistic networks focus on mobile ad-hoc DTNs, where tolerant delayed routes between the source and destination are built dynamically.
+However, OppNets is different from MANETs that it does not assume the existing end-to-end connectivity.
+Therefore, instead of depending on end-to-end MANETs routing protocols, the messages are delivered through one hop data transmission among opportunistic node encounters with intermediate node storage and mobility, called \textit{Store-Carry-Forward paradigm} \cite{Hu2009}. 
+
+
+
+%=============================================================================
+\subsection{Opportunistic Routing}
+\label{bg:Opportunistic Networks:Opportunistic Routing}
+%=============================================================================
+In this opportunistic routing, the nodes can exchange data in a spontaneous manner whenever they come in close.
+If there is no direct connection from source to destination, data holding nodes will discover their nearest neighbor nodes to forward messages toward the destination node.
+Thus, this opportunistic route is determined at each hop when messages traverse through different hops.
+In this routing scheme, mobile nodes are normally equipped with local knowledge of the best nodes around them to determine the best path to transmit the messages with this knowledge.
+In the case of such nodes absence, the node currently holding the message simply stores the messages and wait for an opportunity to forward the packets.
+This  infrastructure-less wireless network environment requires common 2 factors to facilitate the opportunistic routing \cite{Poonguzharselvi2013a} : 
+\begin{itemize}
+	\item Destination path finding:
+	Intermediate nodes are used to form paths dynamically since there is no fixed path from source to destination nodes.
+	\item Next hop forwarder selection:
+	Data holding nodes need to find a helper node that can forward the messages to the destination as soon as possible.
+\end{itemize}
+
+
+%=============================================================================
+\subsection{Classification of Opportunistic Routing}
+\label{bg:Opportunistic Networks:Classification of Opportunistic Routing}
+%=============================================================================
+
+Several researches proposed opportunistic routing algorithms based on store-carry-forward mechanism.
+The existing common OR algorithms can be classified based on their data forwarding behavior as shown in Figure \ref{fig:bg:RoutingInOppNets} 
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\columnwidth]{Figures/RoutingInOppNets.pdf}
+	\caption{Classification of Opportunistic Routing}
+	\label{fig:bg:RoutingInOppNets}
+\end{figure} 
+
+\subsubsection{Direct Transmission}
+\label{bg:Opportunistic Networks:Classification of Opportunistic Routing:DT}
+The source node in direct transmission routing generates the messages and stores it until it directly meet the destination node.
+Spyropoulos et al \cite{1381922} proposed a single-copy routing in intermittently connected mobile networks using hop-by-hop routing model.
+In this single-copy routing, only one copy per message can be transmitted from source node to destination node.
+This routing algorithm significantly reduces the resource requirements of flooding-based algorithms \cite{4430783}.
+However, this scheme produces significantly long delays since the delivery delay is unbounded for this direct transmission routing \cite{1026005}.
+
+\subsubsection{Flooding Based }
+\label{bg:Opportunistic Networks:Classification of Opportunistic Routing:FB}
+The flooding based routing (multiple copies) approach may generate several copies of the same message to be routed independently to increase the efficiency and robustness \cite{4483161}.  
+This flooding based routing can be divided into 2 types:
+\begin{itemize}
+	\item Uncontrolled:
+	In this approach, each node broadcasts the received packet to all of the neighbors without restricted to any limited. 
+	Epidemic routing \cite{Vahdat00epidemicrouting} is proposed utilizing epidemic algorithm to send each message to all nodes in the network.
+	Even tough the Epidemic routing can guarantees all nodes will eventually receive all messages, it incurs significant demand on both bandwidth and buffer.
+	\item Controlled:
+	Undoubtedly, uncontrolled flooding consume network resources which can seriously degrade the performance if the resources are scarce \cite{4374403}.
+	Therefore, there is a need to control the flooding by limit the number of packets to be replicated to reduce the network contention.
+	Several researches proposed the algorithms to control the flooding such as controlled flooding, spray and wait and spray and focus.
+	\begin{itemize}
+		
+		\item Controlled Flooding: 
+		Khaled et al \cite{Khaled2009} proposed a set of Controlled Flooding schemes to address the excessive network resources from flooding. 
+		Four schemes have been examined in this study: Basic probabilistic (BP), Time-to-live (TTL), Kill time and Passive one.
+		The extensive experiments show that proposed schemes can save substantial network resources while incurring a negligible increase in the message delivery delay.
+		As a result, the ability to provide reliable data delivery while resolving excess traffic overhead, controlled flooding protocol can greatly reduce the network overhead.
+		
+		\item Spray and Wait:
+		Spyropoulos et al \cite{Spyropoulos2005} introduced a Spray and Wait routing scheme consisting of two phases: first, \emph{sprays} a number of copies into the network, and then \emph{waits} till one of these nodes meets the destination to bound the overhead of delivering message.
+		In the \emph{spray} phase, a number of \emph{L} messages are created in which \emph{L} indicates the maximum allowable copies of the messages in the network to \emph{L} distinct relays.
+		In the \emph{wait} phase, when the destination nodes are not encountered by a node with a copy of the message in the spraying phase, each node with a copy of message will perform the direct transmission.
+		
+		\item Spray and Focus: Another controlled flooding approach by Spyropoulos et al \cite{Spyropoulos2007} was designed to eliminate some deficiencies of Spray and Wait routing algorithm in some network schemes.
+		Similar to Spray and Wait protocol, this algorithm consists of two phases: Spray phase and Focus phase.
+		The \emph{spray} phase is operated the same way as in Spray and Wait which \emph{L} message copies are spread to all \emph{L} different nodes for every message creating at source node.
+		The different from the \emph{wait} phase is that in the \emph{focus} phase, each copy in a single node is attempted to be routed to a closed node using a single-copy utility based scheme \cite{Spyropoulos2008}.
+	 
+	\end{itemize}
+\end{itemize}
+
+
+\subsubsection{Prediction Based }
+The prediction based routing algorithms are proposed to overcome the overhead carried by flooding based routing schemes. In Prediction based routing, nodes estimate the probability of forwarding messages to the destination based on the history of observations instead of blindly forward the messages to all/some neighbors. 
+With the information, nodes can decide whether they should store or wait for the better chance to forward the messages as well as deciding which nodes to forward the messages to.
+
+\label{bg:Opportunistic Networks:Classification of Opportunistic Routing:PB}
+	\begin{itemize}
+		\item PROPHET:
+		Lindgren et al \cite{Lindgren2004} proposed PROPHET (Probabilistic Routing Protocol using History of Encounters and Transitivity) as a probabilistic routing protocol.
+		This protocol estimates a probabilistic metric called delivery predictability to indicate the probability of successful delivery of a message from local node to the destination.
+		Two nodes can exchange both a summary vector containing delivery probability vector when they meet.
+		The delivery probability metric is derived from previous encounters and subject to an aging factor, meaning if two nodes are often encountered, they have high delivery predictability to each other.
+		On the other hand, if a pair of nodes rarely encounter, they are intuitively not a good candidate to forward messages to each other.
+		The results from the simulations show that PROPHET is able to deliver more messages than Epidemic Routing with a lower communication overhead.
+		
+		\item MobySpace:
+		
+		\item Move:
+	\end{itemize}
+
+
+\subsubsection{Coding Based }
+\label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CB}
+	\begin{itemize}
+		\item Erasure Coding (EC):
+		\item Hybrid (H-EC):
+	\end{itemize}
+
+\subsubsection{Context Based }
+\label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CXB}
+	\begin{itemize}
+		\item HiBOP:
+		\item Community Based:
+	\end{itemize}
+
+\subsubsection{Content Based }
+\label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CTB}
+	\begin{itemize}
+		\item Content Classification:
+		\item Content Framework:
+		\item DORSI:
+	\end{itemize}
+
