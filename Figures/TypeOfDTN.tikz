@@ -1,0 +1,37 @@
+
+\definecolor{c008000}{RGB}{0,128,0}
+\definecolor{c0000ff}{RGB}{0,0,255}
+\definecolor{cff0000}{RGB}{255,0,0}
+
+
+\begin{tikzpicture}[y=0.80pt, x=0.8pt,yscale=-1, inner sep=0pt, outer sep=0pt]
+
+  \begin{scope}[shift={(9.56667,354.31033)}]
+    \path[draw=black,fill=c008000,line join=miter,line cap=butt,fill
+      opacity=0.500,line width=0.800pt] (251.9685,251.9685) ellipse (2.8444cm and
+      2.8444cm);
+    \path[fill=black] (210.34045,247.26793) node[above right] (text3080)
+      {Scheduled};
+    \path[fill=black] (215.09656,268.26791) node[above right] (text3082) {Networks};
+    \path[draw=black,fill=c0000ff,line join=miter,line cap=butt,fill
+      opacity=0.500,line width=0.800pt] (428.3464,251.9685) ellipse (2.8444cm and
+      2.8444cm);
+    \path[fill=black] (384.20316,247.26793) node[above right] (text3086)
+      {Predictable};
+    \path[fill=black] (391.47452,268.26791) node[above right] (text3088) {Networks};
+    \path[draw=black,fill=cff0000,line join=miter,line cap=butt,fill
+      opacity=0.500,line width=0.800pt] (340.1575,377.9528) ellipse (2.8444cm and
+      2.8444cm);
+    \path[fill=black] (286.70322,373.25217) node[above right] (text3092)
+      {Opportunistic};
+    \path[fill=black] (303.28552,394.25217) node[above right] (text3094) {Networks};
+    \path[draw=black,line join=miter,line cap=butt,fill opacity=0.000,line
+      width=0.800pt,rounded corners=0.0000cm] (100.7874,100.7874) rectangle
+      (579.5275,503.9370);
+    \path[fill=black] (117.53034,131.78368) node[above right] (text3098) {Delay
+      Tolerant Networks};
+  \end{scope}
+
+\end{tikzpicture}
+
+
