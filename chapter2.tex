@@ -38,6 +38,8 @@ In the thesis, we study in the most extreme case of DTNs which is the opportunis
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{Figures/TypeOfDTN.tikz}
+%\includegraphics{Figures/TypeOfDTN.tikz}
+
 %\input{Figures/TypeOfDTN.tikz}
 \caption{Types of DTN}
 \label{fig:bg:Type of DTN}
@@ -208,24 +210,47 @@ In fact, both MobySpace and MV can be also viewed as one type of context based r
 		%%
 		This method exploits the mobility as well as reduces the number of nodes involving in the forwarding process, which results in the low overhead comparing to the other dissemination-oriented routing algorithms, such as Epidemic or PROPHET \cite{isaac2013}. 
 
-
 		\item Community Based:
-		\cite{Mingjun2014}
-
-
-
-
+		The types of opportunistic networks that consist of mobile nodes with social characteristics are called community based opportunistic network (CON) or Mobile social networks (MSNs).
+		%%
+		Niu et al \cite{Jianwei2009} proposed Community-based Data Transmission Scheme (CDTS) by utilizing the characteristics of social networks.
+		%%
+		The idea behind CDTS is based on the observation that social nodes always have different social roles which can determine the activity area and mobility pattern.
+		%%
+		Moreover, the social nodes tend to have higher probability to move within their community while containing lower chance to leave the local community to other community. 
+		%%
+		The mobility model of this scheme has been designed to match the real mobility characteristics of CDTS.
+		%%
+		The simulation results show that by adjusting the number of data copies and forwarding condition, CDTS can achieve efficient data transmission with less resource consumption.
+		%%
+		In addition, Xiao et al \cite{Mingjun2014} proposed a distributed optimal Community-Aware Opportunistic Routing (CAOR) algorithm by modeling an MSN into overlapping home-aware community.
+		%%
+		The first step is to turn the routing among a number of nodes into the routing between community homes.
+		%%
+		Then, an optimal relay set of each home is maintained and each home can only forward the messages to the nodes in its relay set and ignores the others.
+		%%
+		Comparing with previous social-aware routing such as Bubbl rap \cite{pan2011}, this algorithm can achieve the optimal routing performance with a very low maintenance cost.
 	\end{itemize}
 
 \subsubsection{Coding Based }
 \label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CB}
+%%
+The coding based routing is proposed to address the transmission issues in very poor network connectivity.
+%%
+By transforming a message into another format prior to the transmission with embedded additional information, the coding based schemes are more robust than replication based routing because the original message can be reconstructed with only a certain number of the code blocks.
+%%
 	\begin{itemize}
 		\item Erasure Coding (EC):
+
+		\cite{Wang2005}
+
 
 		\item Hybrid (H-EC):
 	\end{itemize}
 
 
+
+However, coding based schemes are less efficient when the network is well connected, which is simply due to additional information embedded in the code blocks.
 
 \subsubsection{Content Based }
 \label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CTB}
@@ -235,6 +260,10 @@ In fact, both MobySpace and MV can be also viewed as one type of context based r
 		\item DORSI:
 	\end{itemize}
 
+In this chapter, we tried to summarize and categorized the characteristics of routing algorithms in opportunistic networks.
+%%
+For more extensive researches on OppNet on the related work in the literature can also look at some surveys such as \cite{Yue2013, Souza2010, Poonguzharselvi2013a, Nousiainen2013, Behrouz2013, Wahid2014}	
+%%
 In conclusion, several opportunistic routing approaches have been proposed to address the issues of MANET which only exploits the insufficient topological information.
 %%
 The early approaches proposed the flooding techniques from \emph{blindly} flooding method to controlled flooding solutions in order to reduce the network overhead from flooding based routings.

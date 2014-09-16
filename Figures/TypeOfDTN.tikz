@@ -35,3 +35,31 @@
 \end{tikzpicture}
 
 
+% \definecolor{cff0000}{RGB}{255,0,0}
+% \definecolor{c0000ff}{RGB}{0,0,255}
+% \definecolor{c00ff00}{RGB}{0,255,0}
+
+
+% \begin{tikzpicture}[y=0.80pt, x=0.8pt,yscale=-1, inner sep=0pt, outer sep=0pt]
+%   \path[cm={{1.34999,0.0,0.0,1.34999,(-115.031,-18.53039)}},draw=black,fill=cff0000,opacity=0.200,line
+%     join=miter,line cap=butt,even odd rule,line width=0.800pt]
+%     (486.8935,449.8062)arc(0.000:180.000:110.612)arc(-180.000:0.000:110.612) --
+%     cycle;
+%   \path[cm={{1.50754,0.0,0.0,1.37493,(-210.22983,-236.50645)}},fill=c0000ff,opacity=0.200]
+%     (417.1930,457.3823)arc(-0.000:180.000:99.500025 and
+%     109.096)arc(-180.000:0.000:99.500025 and 109.096) -- cycle;
+%   \path[cm={{1.26377,0.0,0.0,1.29124,(-210.11345,-213.87965)}},fill=c00ff00,opacity=0.200]
+%     (677.8124,469.5041)arc(-0.017:180.017:118.692920 and
+%     116.168)arc(-180.017:0.017:118.692920 and 116.168) -- cycle;
+%   \path[fill=black] (259.74182,378.13867) node[text width=1cm,align=center] (text3761)
+%     {Scheduled\\Networks};
+%   \path[fill=black] (511.30133,369.50504) node[text width=1cm,align=left] (text3767)
+%     {Predictable\\Networks};
+%   \path[fill=black] (395.8605,584.50507) node[text width=1cm,align=center] (text3773)
+%     {Opportunistic\\Networks};
+%   \path[draw=black,rounded corners=0.0000cm] (92.9825,203.2394) rectangle
+%     (705.2632,758.5026);
+%   \path[fill=black] (98.245605,234.81833) node[above right] (text3785) {Delay
+%     Tolerant Networks};
+
+% \end{tikzpicture}
