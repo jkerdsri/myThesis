@@ -1,9 +1,11 @@
+%!TEX root = thesis.tex
 \chapter{Background and Related Work}
 \label{bg}
 % \SVN $Revision: 838 $
 % \SVN $Author: sgordon $
 % \SVN $Date: 2014-05-12 13:30:42 +0700 (Mon, 12 May 2014) $
 % \SVN $URL: https://sandilands.info/svn/Common/Styles/siitthesis/chapter2.tex $
+
 
 Recently, wireless networking are witnessing several deployments in various extreme environments where they usually suffer from different levels of link disruptions depending on the severity of the operations. 
 Commonly, these networks are known as Intermittently Connected Networks (ICNs). 
@@ -112,7 +114,7 @@ In this single-copy routing, only one copy per message can be transmitted from s
 This routing algorithm significantly reduces the resource requirements of flooding-based algorithms \cite{Spyropoulos2008}.
 However, this scheme produces significantly long delays since the delivery delay is unbounded for this direct transmission routing \cite{Grossglauser2002}.
 
-\subsubsection{Flooding Based }
+\subsubsection{Flooding Based}
 \label{bg:Opportunistic Networks:Classification of Opportunistic Routing:FB}
 The flooding based routing (multiple copies) approach may generate several copies of the same message to be routed independently to increase the efficiency and robustness \cite{Chung-Ming2008}.  
 This flooding based routing can be divided into 2 types:
@@ -147,7 +149,7 @@ This flooding based routing can be divided into 2 types:
 \end{itemize}
 
 
-\subsubsection{Prediction Based }
+\subsubsection{Prediction Based}
 The prediction based routing algorithms are proposed to overcome the overhead carried by flooding based routing schemes. In Prediction based routing, nodes estimate the probability of forwarding messages to the destination based on the history of observations instead of blindly forward the messages to all/some neighbors. 
 With the information, nodes can decide whether they should store or wait for the better chance to forward the messages as well as deciding which nodes to forward the messages to.
 
@@ -176,7 +178,7 @@ With the information, nodes can decide whether they should store or wait for the
 		The experiment shows that this algorithm can achieving delivery rates closer to the true optimal rate.
 	\end{itemize}
 
-\subsubsection{Context Based }
+\subsubsection{Context Based}
 \label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CXB}
 
 Nevertheless, the predication based routing failed in several scenarios with the reduction in delivery rates comparing to the flooding based approach.
@@ -232,7 +234,7 @@ In fact, both MobySpace and MV can be also viewed as one type of context based r
 		Comparing with previous social-aware routing such as Bubbl rap \cite{pan2011}, this algorithm can achieve the optimal routing performance with a very low maintenance cost.
 	\end{itemize}
 
-\subsubsection{Coding Based }
+\subsubsection{Coding Based}
 \label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CB}
 %%
 The coding based routing is proposed to address the transmission issues in very poor network connectivity.
@@ -245,7 +247,7 @@ By transforming a message into another format prior to the transmission with emb
 		%%
 		To delineate the detailed process, an algorithm produces $ M \cdot \sfrac{r}{b}$ equal sized code blocks of size $b$ of	a message of size $M$ a replication factor $r$.
 		%%
-		Consequently, the messages can be reconstructed by  $(1+\epsilon) \cdot \sfrac{M}{b}$ erasure coded blocks while $\epsilon$ is a small constant 
+		Consequently, the messages can be reconstructed by  $(1+\epsilon) \cdot \sfrac{M}{b}$ erasure coded blocks where $\epsilon$ is a small constant 
 		varying by the utilizing algorithm, such as Reed-Solomon codes or Tornado codes \cite{Chung2003}.
 		%%
 		Due to the additional information embedded in the code blocks, coding based schemes are less efficient when the network is well connected \cite{Yu2006}.
@@ -267,17 +269,40 @@ By transforming a message into another format prior to the transmission with emb
 	\end{itemize}
 
 
-\subsubsection{Content Based }
+\subsubsection{Content Based}
 \label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CTB}
+%%
+Because of the Store-Carry-Forward paradigm requires a node to store and carry the messages in order to find the opportunity to forward the messages, the content storage can become the core service of opportunistic routing.
+%%
 	\begin{itemize}
 		\item Content Classification:
-		\item Content Framework:
-		\item DORSI:
+		%%
+		JIAO et al \cite{Jiao2009} proposed the data dissemination method that classified the forwarding messages based on their content to reduce the transmitted messages in the network.
+		%%
+		The idea behind this method is that every node only requests the message that it is interested in, so that the delivery rate can be improved.
+		%%
+		This method can largely cut down the number of messages transmitted in the the network since it avoids sending all messages when nodes get contacted.
+		%%
+		In addition, a buffer management scheme based on the content popularity is proposed, by managing the buffer based on the time that messages are requested.
+		%%
+		The simulation results show that the content classification can maintain high delivery ratio while attaining low over head and low delay.
+
+		\item Content Framework: 
+		%%
+		A content-centric framework was proposed by Chen et al \cite{Chen2008} to better facilitate content dissemination based on the characteristics of the content of the messages.
+		%%
+		Three message scheduling algorithms were proposed: Sequential Forwarding (SF), Full Interleaving (FI), and Block-based Interleaving (BI).
+		%%
+		The evaluation were performed on three types of content, including file, video and web documents with the Layered Multiple Description Coding (LMDC) based dissemination methods and file-based.
+		%%
+		The simulation results as well as synthetic and realistic network scenarios show that the proposed schemes can achieve much better latency performance for file transfer.
+
+		
 	\end{itemize}
 
 In this chapter, we tried to summarize and categorized the characteristics of routing algorithms in opportunistic networks.
 %%
-For more extensive researches on OppNet on the related work in the literature can also look at some surveys such as \cite{Yue2013, Souza2010, Poonguzharselvi2013a, Nousiainen2013, Behrouz2013, Wahid2014}	
+For more extensive researches on OppNet on the related work in the literature can also look at some surveys such as \cite{Yue2013, Souza2010, Poonguzharselvi2013a, Nousiainen2013, Behrouz2013, Wahid2014}.
 %%
 In conclusion, several opportunistic routing approaches have been proposed to address the issues of MANET which only exploits the insufficient topological information.
 %%
@@ -285,5 +310,6 @@ The early approaches proposed the flooding techniques from \emph{blindly} floodi
 %%
 Later on, more advanced approaches have been proposed with the higher-level of information rather than only the topological information such as forwarding the messages to the nodes with higher chance of meeting the destination in PROPHET.
 %%
+Then several aspects of OppNet routing approaches have been proposed such as Context based rouing.
 
 
