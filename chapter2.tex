@@ -250,13 +250,22 @@ By transforming a message into another format prior to the transmission with emb
 		%%
 		Due to the additional information embedded in the code blocks, coding based schemes are less efficient when the network is well connected \cite{Yu2006}.
 
-
-
 		\item Hybrid (H-EC):
+		Chen et al \cite{Chen2006} proposed A Hybrid Routing Approach for Opportunistic Networks (H-EC) to fully combine the advantage of EC robustness while maintaining the efficient of flooding based routing technique. 
+		%%
+		In H-EC algorithm, the sender will transmit two copies of EC blocks. 
+		%%
+		The first copy is transmitted in the same manner of original EC scheme.
+		%%
+		After sending the first EC block, the second EC block is transmitted using A-EC algorithm during the residual contact duration. 
+		%%
+		With A-EC algorithm, the source sends as many coded blocks as possible during each contact in order to gain better utilization of the network contact.
+		%%
+		As a result, H-EC can gain better forwarding performance in the worst delay performance.
+		%%
+		The simulation results suggest that H-EC achieve good performance in small delay performance cases while offering robustness in worst-case delay performance cases.
 	\end{itemize}
 
-
-However, coding based schemes are less efficient when the network is well connected, which is simply due to additional information embedded in the code blocks.
 
 \subsubsection{Content Based }
 \label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CTB}
