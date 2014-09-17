@@ -241,13 +241,19 @@ By transforming a message into another format prior to the transmission with emb
 %%
 	\begin{itemize}
 		\item Erasure Coding (EC):
+		The main idea of Erasure coding \cite{Wang2005} is converting a message into a larger set of code blocks in which the original message can be reconstructed by large subset of the generated code blocks.
+		%%
+		To delineate the detailed process, an algorithm produces $ M \cdot \sfrac{r}{b}$ equal sized code blocks of size $b$ of	a message of size $M$ a replication factor $r$.
+		%%
+		Consequently, the messages can be reconstructed by  $(1+\epsilon) \cdot \sfrac{M}{b}$ erasure coded blocks while $\epsilon$ is a small constant 
+		varying by the utilizing algorithm, such as Reed-Solomon codes or Tornado codes \cite{Chung2003}.
+		%%
+		Due to the additional information embedded in the code blocks, coding based schemes are less efficient when the network is well connected \cite{Yu2006}.
 
-		\cite{Wang2005}
 
 
 		\item Hybrid (H-EC):
 	\end{itemize}
-
 
 
 However, coding based schemes are less efficient when the network is well connected, which is simply due to additional information embedded in the code blocks.
