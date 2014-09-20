@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Drawing Units="cm" PPU="50.3936996459961" Major="1" Subdivisions="10" Zoom="1.08030722785854" ViewPositionX="102.779661016949" ViewPositionY="-99.0508474576271" ActiveLayer="0" PrintSize="8.5,11">
+  <Layer Name="Layer 1" Visible="True" Locked="False">
+    <Rectangle X="0.25" Y="6.75" Width="2.5" Height="0.5" FillColor="#FFFFFF" Text="Routing in OppNet" FigureId="0" />
+    <Rectangle X="4" Y="1.5" Width="2.5" Height="0.5" FillColor="#FFFFFF" Text="Direct Transmission" FigureId="1" />
+    <OrthoginalPathConnection Filled="False" Definition="M2.75 7 L3.125 7 C3.2625 7 3.375 6.8875 3.375 6.75 L3.375 2 C3.375 1.8625 3.4875 1.75 3.625 1.75 L4 1.75" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="0" EndConnectionPointId="FIGURE_CENTER" EndFigureId="1" />
+    <Rectangle X="8" Y="1.5" Width="2.25" Height="0.5" FillColor="#FFFFFF" Text="Single Copy" FigureId="2" />
+    <OrthoginalPathConnection Filled="False" Definition="M6.5 1.75 L7.25 1.75 C7.25 1.75 7.25 1.75 7.25 1.75 L7.25 1.75 C7.25 1.75 7.25 1.75 7.25 1.75 L8 1.75" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="1" EndConnectionPointId="FIGURE_CENTER" EndFigureId="2" />
+    <Rectangle X="4" Y="3.5" Width="2.25" Height="0.5" FillColor="#FFFFFF" Text="Flooding Based" FigureId="3" />
+    <OrthoginalPathConnection Filled="False" Definition="M2.75 7 L3.125 7 C3.2625 7 3.375 6.8875 3.375 6.75 L3.375 4 C3.375 3.8625 3.4875 3.75 3.625 3.75 L4 3.75" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="0" EndConnectionPointId="FIGURE_CENTER" EndFigureId="3" />
+    <Rectangle X="8" Y="2.75" Width="2.25" Height="0.5" FillColor="#FFFFFF" Text="Uncontrolled" FigureId="4" />
+    <Rectangle X="8" Y="4.75" Width="2.25" Height="0.5" FillColor="#FFFFFF" Text="Controlled" FigureId="5" />
+    <OrthoginalPathConnection Filled="False" Definition="M6.25 3.75 L6.875 3.75 C7.0125 3.75 7.125 3.6375 7.125 3.5 L7.125 3.25 C7.125 3.1125 7.2375 3 7.375 3 L8 3" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="3" EndConnectionPointId="FIGURE_CENTER" EndFigureId="4" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 5 L7.375 5 C7.2375 5 7.125 4.8875 7.125 4.75 L7.125 4 C7.125 3.8625 7.0125 3.75 6.875 3.75 L6.25 3.75" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="5" EndConnectionPointId="FIGURE_CENTER" EndFigureId="3" />
+    <Rectangle X="12.75" Y="2.75" Width="2.5" Height="0.5" FillColor="#FFFFFF" Text="Epidemic" FigureId="6" />
+    <OrthoginalPathConnection Filled="False" Definition="M10.25 3 L11.5 3 C11.5 3 11.5 3 11.5 3 L11.5 3 C11.5 3 11.5 3 11.5 3 L12.75 3" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="4" EndConnectionPointId="FIGURE_CENTER" EndFigureId="6" />
+    <Rectangle X="12.75" Y="3.75" Width="2.5" Height="0.5" FillColor="#FFFFFF" Text="Spray and Wait" FigureId="7" />
+    <Rectangle X="12.75" Y="4.75" Width="2.5" Height="0.5" FillColor="#FFFFFF" Text="Controlled Flooding" FigureId="8" />
+    <Rectangle X="12.75" Y="5.75" Width="2.5" Height="0.5" FillColor="#FFFFFF" Text="Spray and Focus" FigureId="9" />
+    <OrthoginalPathConnection Filled="False" Definition="M12.75 4 L11.75 4 C11.6125 4 11.5 4.1125 11.5 4.25 L11.5 4.75 C11.5 4.8875 11.3875 5 11.25 5 L10.25 5" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="7" EndConnectionPointId="FIGURE_CENTER" EndFigureId="5" />
+    <OrthoginalPathConnection Filled="False" Definition="M12.75 5 L11.5 5 C11.5 5 11.5 5 11.5 5 L11.5 5 C11.5 5 11.5 5 11.5 5 L10.25 5" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="8" EndConnectionPointId="FIGURE_CENTER" EndFigureId="5" />
+    <OrthoginalPathConnection Filled="False" Definition="M12.75 6 L11.75 6 C11.6125 6 11.5 5.8875 11.5 5.75 L11.5 5.25 C11.5 5.1125 11.3875 5 11.25 5 L10.25 5" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="9" EndConnectionPointId="FIGURE_CENTER" EndFigureId="5" />
+    <Rectangle X="4.125" Y="6.75" Width="2.25" Height="0.5" FillColor="#FFFFFF" Text="Prediction Based" FigureId="10" />
+    <Rectangle X="8" Y="5.75" Width="2.25" Height="0.5" FillColor="#FFFFFF" Text="PROPHET&#xA;" FigureId="11" />
+    <Rectangle X="8" Y="7.75" Width="2.25" Height="0.5" FillColor="#FFFFFF" Text="Move" FigureId="12" />
+    <Rectangle X="8" Y="6.75" Width="2.25" Height="0.5" FillColor="#FFFFFF" Text="MobySpace" FigureId="13" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 6 L7.4375 6 C7.3 6 7.1875 6.1125 7.1875 6.25 L7.1875 6.75 C7.1875 6.8875 7.075 7 6.9375 7 L6.375 7" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="11" EndConnectionPointId="FIGURE_CENTER" EndFigureId="10" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 7 L7.1875 7 C7.1875 7 7.1875 7 7.1875 7 L7.1875 7 C7.1875 7 7.1875 7 7.1875 7 L6.375 7" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="13" EndConnectionPointId="FIGURE_CENTER" EndFigureId="10" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 8 L7.4375 8 C7.3 8 7.1875 7.8875 7.1875 7.75 L7.1875 7.25 C7.1875 7.1125 7.075 7 6.9375 7 L6.375 7" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="12" EndConnectionPointId="FIGURE_CENTER" EndFigureId="10" />
+    <OrthoginalPathConnection Filled="False" Definition="M4.125 7 L3.4375 7 C3.4375 7 3.4375 7 3.4375 7 L3.4375 7 C3.4375 7 3.4375 7 3.4375 7 L2.75 7" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="10" EndConnectionPointId="FIGURE_CENTER" EndFigureId="0" />
+    <Rectangle X="4.125" Y="9.25" Width="2.25" Height="0.5" FillColor="#FFFFFF" Text="Coding Based" FigureId="14" />
+    <Rectangle X="8" Y="8.75" Width="2.5" Height="0.5" FillColor="#FFFFFF" Text="Erasure Coding (EC)" FigureId="15" />
+    <Rectangle X="8" Y="9.75" Width="2.125" Height="0.5" FillColor="#FFFFFF" Text="Hybrid (H-EC)" FigureId="16" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 9 L7.4375 9 C7.3 9 7.1875 9.1125 7.1875 9.25 L7.1875 9.25 C7.1875 9.3875 7.075 9.5 6.9375 9.5 L6.375 9.5" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="15" EndConnectionPointId="FIGURE_CENTER" EndFigureId="14" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 10 L7.4375 10 C7.3 10 7.1875 9.8875 7.1875 9.75 L7.1875 9.75 C7.1875 9.6125 7.075 9.5 6.9375 9.5 L6.375 9.5" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="16" EndConnectionPointId="FIGURE_CENTER" EndFigureId="14" />
+    <OrthoginalPathConnection Filled="False" Definition="M4.125 9.5 L3.6875 9.5 C3.55 9.5 3.4375 9.3875 3.4375 9.25 L3.4375 7.25 C3.4375 7.1125 3.325 7 3.1875 7 L2.75 7" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="14" EndConnectionPointId="FIGURE_CENTER" EndFigureId="0" />
+    <Rectangle X="4.125" Y="11.25" Width="2.25" Height="0.5" FillColor="#FFFFFF" Text="Context Based" FigureId="17" />
+    <Rectangle X="8" Y="10.75" Width="2.125" Height="0.5" FillColor="#FFFFFF" Text="HiBOP" FigureId="18" />
+    <Rectangle X="8" Y="11.75" Width="2.125" Height="0.5" FillColor="#FFFFFF" Text="Community Based" FigureId="19" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 11 L7.4375 11 C7.3 11 7.1875 11.1125 7.1875 11.25 L7.1875 11.25 C7.1875 11.3875 7.075 11.5 6.9375 11.5 L6.375 11.5" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="18" EndConnectionPointId="FIGURE_CENTER" EndFigureId="17" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 12 L7.4375 12 C7.3 12 7.1875 11.8875 7.1875 11.75 L7.1875 11.75 C7.1875 11.6125 7.075 11.5 6.9375 11.5 L6.375 11.5" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="19" EndConnectionPointId="FIGURE_CENTER" EndFigureId="17" />
+    <OrthoginalPathConnection Filled="False" Definition="M4.125 11.5 L3.6875 11.5 C3.55 11.5 3.4375 11.3875 3.4375 11.25 L3.4375 7.25 C3.4375 7.1125 3.325 7 3.1875 7 L2.75 7" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="17" EndConnectionPointId="FIGURE_CENTER" EndFigureId="0" />
+    <Rectangle X="4.125" Y="13.75" Width="2" Height="0.5" FillColor="#FFFFFF" Text="Content Based" FigureId="20" />
+    <Rectangle X="8" Y="12.75" Width="2.75" Height="0.5" FillColor="#FFFFFF" Text="Content Classification" FigureId="21" />
+    <Rectangle X="8" Y="13.75" Width="2.8125" Height="0.5" FillColor="#FFFFFF" Text="Content Framework" FigureId="22" />
+    <Rectangle X="8" Y="14.75" Width="2.125" Height="0.5" FillColor="#FFFFFF" Text="DORSI" FigureId="23" />
+    <OrthoginalPathConnection Filled="False" Definition="M4.125 14 L3.6875 14 C3.55 14 3.4375 13.8875 3.4375 13.75 L3.4375 7.25 C3.4375 7.1125 3.325 7 3.1875 7 L2.75 7" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="20" EndConnectionPointId="FIGURE_CENTER" EndFigureId="0" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 13 L7.3125 13 C7.175 13 7.0625 13.1125 7.0625 13.25 L7.0625 13.75 C7.0625 13.8875 6.95 14 6.8125 14 L6.125 14" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="21" EndConnectionPointId="FIGURE_CENTER" EndFigureId="20" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 14 L7.0625 14 C7.0625 14 7.0625 14 7.0625 14 L7.0625 14 C7.0625 14 7.0625 14 7.0625 14 L6.125 14" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="22" EndConnectionPointId="FIGURE_CENTER" EndFigureId="20" />
+    <OrthoginalPathConnection Filled="False" Definition="M8 15 L7.3125 15 C7.175 15 7.0625 14.8875 7.0625 14.75 L7.0625 14.25 C7.0625 14.1125 6.95 14 6.8125 14 L6.125 14" CornerRadius="0.25" Direction="EAST_WEST" StartConnectionPointId="FIGURE_CENTER" StartFigureId="23" EndConnectionPointId="FIGURE_CENTER" EndFigureId="20" />
+  </Layer>
+</Drawing>
