@@ -1,20 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Beamer Presentation
-% LaTeX Template
-% Version 1.0 (10/11/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND THEMES
-%----------------------------------------------------------------------------------------
-
 \documentclass{beamer}
 
 \mode<presentation> {
@@ -45,7 +28,7 @@
 %\usetheme{Marburg}
 %\usetheme{Montpellier}
 %\usetheme{PaloAlto}
-%\usetheme{Pittsburgh}
+% \usetheme{Pittsburgh}
 %\usetheme{Rochester}
 \usetheme{Singapore}
 %\usetheme{Szeged}
@@ -77,15 +60,12 @@
 %\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
 
+\usepackage[english]{babel}
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
-\usepackage{cite}
-
-
-
-
-
-
+\usepackage{tikz}
+%\usepackage[utf8]{inputenc}
+\setbeamertemplate{bibliography item}{}
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -102,100 +82,33 @@ Thammasat University \\ % Your institution for the title page
 }
 \date{\today} % Date, can be changed to a custom date
 
-\begin{document}
 
+\begin{document}
+%------------------------------------------------
 \begin{frame}
 \titlepage % Print the title page as the first slide
 \end{frame}
-
+%------------------------------------------------
 \begin{frame}
 \frametitle{Overview} % Table of contents slide, comment this block out to remove it
 \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
-
-%----------------------------------------------------------------------------------------
-%	PRESENTATION SLIDES
-%----------------------------------------------------------------------------------------
+%------------------------------------------------
+\section{Type of DTN}
+%------------------------------------------------
+\begin{frame}
+	\frametitle{Literatures Review}
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{Figures/TypeOfDTN.pdf}
+\caption{Types of DTN}
+\label{fig:bg:Type of DTN}
+\end{figure} 
+\end{frame}
 
 %------------------------------------------------
-% \section{Thesis Structure} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
-% %------------------------------------------------
-
-% %\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
-
-% \begin{frame}
-% \frametitle{Thesis Structure}
-
-% \begin{list}{-}{Chapter Title}
-% \item Signature Page 
-% \item  Acknowledgments 
-% \item  Abstract 
-% \item  Table of Contents 
-% \item  List of Figures 
-% \item  List of Tables 
-% \item List of Listings 
-% \item List of Acronyms
-% \end{list}
-
-% \begin{itemize}
-% \item Introduction 
-% \begin{itemize}
-% \item  Problem Statement 
-% \item  Objective and Scope 
-% \item  Proposed Approaches 
-% \item  Our Contributions 
-% \end{itemize}
-% \item  Background and Related Work 
-% \begin{itemize}
-%  	\item  Delay Tolerant Networks
-% 	\item  Opportunistic Networks 
-% \end{itemize}
-% \end{itemize}
-% \end{frame}
-% %------------------------------------------------
-% \begin{frame}
-% 	\frametitle{Thesis Structure}
-% 	\begin{itemize}
-% \item  Dynamic Rendezvous based Routing Algorithm on Sparse Opportunistic Network Environment 
-% \begin{itemize}
-% 	\item  Rendezvous Place  
-% 	\item  Simulation Model and Results 
-% 	\item  Summary of Contributions
-% \end{itemize}
-% \item  Data-wise Opportunistic Routing with Spatial Information  
-% \begin{itemize}
-% 	\item  Data-wise Routing 
-% 	\item  Simulation Model and Results 
-% 	\item  Summary of Contributions 
-% \end{itemize}
-% \item  Conclusion and Future Work 
-% \begin{itemize}
-% 	\item  Discussion
-% 	\item  Conclusion 
-% 	\item  Future Work
-% \end{itemize}
-% \item References
-% \item Appendix A: List of Publications
-% \end{itemize}
-% \end{frame}
-
-
-
-
-
-%Existing works --> not applicable on some app
-% Too my power
-%Our Approaches
-%
-%
-%
-%
-%
-%
-
+\section{OppNet Overview}
 %------------------------------------------------
-% What is OppNet --> Fix --> Traditional  --> Dynamic
-\section{Opportunistic Network Overview}
 \begin{frame}
 	\frametitle{What is OppNet?}
 	\begin{figure}
@@ -206,45 +119,55 @@ Thammasat University \\ % Your institution for the title page
 	\end{figure}
 \begin{itemize}
 	\item A challenge network where the nodes need to communicate with each other even either direct or indirect routes between them may not permanently exist due to the nodes’ random movement. 
-	\item Using store- carry-forward paradigm 
+	\item Using store- carry-forward paradigm \cite{Yamamura2011} 
 \end{itemize}
 
 \end{frame}
-% %------------------------------------------------
-% \section{Applications for OppNet}
-% %------------------------------------------------
-% \begin{frame}
-% 	\frametitle{Applications for OppNet}
+%------------------------------------------------
+\begin{frame}[t]
+	% \frametitle{title}
+	% \framesubtitle{subtitle}
+	\frametitle{Applications for OppNet}
 	
-% 	\begin{block}{Wildlife Monitoring}
-% 		ZebraNet \cite{zebranet2004}, SWIM \cite{Small2003}	
-% 	\end{block}
+	\begin{block}{Wildlife Monitoring}
+		ZebraNet \cite{zebranet2004}, SWIM \cite{Small2003}	
+	\end{block}
 	
-% 	\begin{block}{Battlefield Network}
-% 		Military tactical networks \cite{Kerdsri2012} \cite{Scott2005}
-% 	\end{block}
+	\begin{block}{Battlefield Network}
+		Military tactical networks \cite{Kerdsri2012} \cite{Scott2005}
+	\end{block}
 	
-% 	\begin{block}{Disaster Monitoring Network}
-% 		Help Me \cite{Mokryn2012}
-% 	\end{block}
-% \end{frame}
-
+	\begin{block}{Disaster Monitoring Network}
+		Help Me \cite{Mokryn2012}
+	\end{block}
+	
+\end{frame}
 
 %------------------------------------------------
 \section{Existing Works}
 %------------------------------------------------
 \begin{frame}
 	\frametitle{Literatures Review}
+
 	\begin{figure}
-		\centering
-		\includegraphics[width=0.5\linewidth]{Figures_Present/RoutingInOppNets}
-		\caption{Diagram of Existing OppNet Routing}
-		\label{fig:RoutingInOppNets}
-	\end{figure}
+	\centering
+	  %\include[width=\textwidth]{OppNetDiagram}%     without .tex extension
+\resizebox{5.0cm}{!}{%
+
+\input {OppNetDiagram}
+}
+	\caption{Classification of Opportunistic Routing}
+	\label{fig:bg:RoutingInOppNets}
+\end{figure}
+
+	% \begin{figure}
+	% 	\centering
+	% 	\includegraphics[width=0.5\linewidth]{Figures_Present/RoutingInOppNets}
+	% 	\caption{Diagram of Existing OppNet Routing}
+	% 	\label{fig:RoutingInOppNets}
+	% \end{figure}
 	
 \end{frame}
-
-
 %------------------------------------------------
 \section{Problem Statement}
 %------------------------------------------------
@@ -261,28 +184,24 @@ Thammasat University \\ % Your institution for the title page
 
 \end{itemize}
 \end{frame}
-
-
+%------------------------------------------------
+\section{Proposals}
+%------------------------------------------------
 \begin{frame}
 	\frametitle{Proposed Approaches}
 	\begin{itemize}
-		\item Dynamic Rendezvous based Routing Algorithm on Sparse Opportunistic Network Environment 
-	
-		
-		\item DORSI: Data-wise Opportunistic Routing with Spatial Information
-		
-		
+		\item{\emph{DRRA}:} Dynamic Rendezvous based Routing Algorithm on Sparse Opportunistic Network Environment 
+		\item{\emph{DORSI}:} Data-wise Opportunistic Routing with Spatial Information		
 	\end{itemize}
 \end{frame}
-
 %------------------------------------------------
-\section{Dynamic Rendezvous based Routing Algorithm on Sparse Opportunistic Network Environment}
+\subsection{DRRA}
 %------------------------------------------------
 \begin{frame}
 	\frametitle{Rendezvous Based OppNet System Model}
 	\begin{figure}
 \centering
-\includegraphics[width=0.7\linewidth]{Figures_Present/NewSystemModel}
+\includegraphics[width=0.7\linewidth]{Figures/NewSystemModel}
 \caption{System Model}
 \label{fig:NewSystemModel}
 \end{figure}
@@ -292,7 +211,7 @@ Thammasat University \\ % Your institution for the title page
 	\frametitle{OppNet Operation Modes: Full Power \& Power Saving}
 	\begin{figure}
 \centering
-\includegraphics[width=0.7\linewidth]{Figures_Present/OperationalMode}
+\includegraphics[width=0.7\linewidth]{Figures/OperationalMode}
 \caption{Operational Modes}
 \label{fig:OperationalMode}
 \end{figure}
@@ -302,7 +221,7 @@ Thammasat University \\ % Your institution for the title page
 	\frametitle{Rendezvous place and its Rumor protocol}
 \begin{figure}
 \centering
-\includegraphics[width=0.7\linewidth]{Figures_Present/NewRendezvousPlace}
+\includegraphics[width=0.7\linewidth]{Figures/NewRendezvousPlace}
 \caption{Rendezvous Place}
 \label{fig:NewRendezvousPlace}
 \end{figure}
@@ -316,76 +235,109 @@ Thammasat University \\ % Your institution for the title page
 	\end{itemize}
 \begin{figure}
 \centering
-\includegraphics[width=0.5\linewidth]{Figures_Present/Dynamic}
-\caption{Rendezvous Place Searching}
+\includegraphics[width=0.5\linewidth]{Figures/Dynamic}
+%\caption{Rendezvous Place Searching}
 \label{fig:Dynamic}
 \end{figure}
+\tiny{\begin{eqnarray}
+\label{DirectionParameter}
+\vec{\Delta} =\sum _{ i=1 }^{ C }{ \vec { { \omega }_{ c }^{ i } }  } + \varphi \sum _{ j=1 }^{ R }{ \delta\left( d_{j} \right)
+	\vec { {w }_{ rv }^{ j } }  }
+\end{eqnarray}}
+\tiny{\[\delta \left( { d }_{ j } \right) =\begin{cases} 1\quad ;\quad { d }_{ j }\quad \le { \quad D }_{ cc } \\ 0\quad ;\quad { d }_{ j }\quad >{ \quad D }_{ cc } \end{cases}  \] }
+
+
 \end{frame}
 %------------------------------------------------
 \begin{frame}
 	\frametitle{Simulation Setup}
 \begin{table}[!t]
 	\renewcommand{\arraystretch}{1.3}
-	\caption{simulation variables}
+	\caption{DRRA Simulation variables}
 	\label{table_parameters}
 	\centering
-	\begin{tabular}{|c|c|c|c|}
+	\begin{tabular}{|c|c|c|}
 		\hline
-		Parameters         & $N_{i}$ & $N_{c}$ & $N_{rv}$ \\ \hline
-		Simulation Time     & \multicolumn{3}{|c|}{10800 Seconds }  \\ \hline
-		Message Size       &  \multicolumn{3}{|c|}{500 KB - 1 MB}        \\ \hline
-		Node Buffer         & \multicolumn{2}{|c|}{500 MB}&  10 GB      \\ \hline
-		Radio Range & 30 Meters &  $r_{c} = 30$ Meters  & 100 Meters \\ \hline
-		Transmission Speed &  \multicolumn{3}{|c|}{ 54 Mbps   }        \\ \hline
-		Router             & \multicolumn{3}{|c|}{ DRRA | Epidemic   } \\ \hline
-		Moving Speed       &   \multicolumn{3}{|c|}{0.5 - 1.5 m/s }        \\ \hline
-		Movement Model     &   \multicolumn{3}{|c|}{Group Movement Model  }      \\ \hline
+		Parameters         &  $N_{c}$ & $N_{rv}$ \\ \hline
+	%	Simulation Time     & \multicolumn{2}{|c|}{10800 Seconds }  \\ \hline
+		Message Size       &  \multicolumn{2}{|c|}{500 KB - 1 MB}        \\ \hline
+		% Node Buffer         & \multicolumn{2}{|c|}{500 MB}&  10 GB      \\ \hline
+		Maximum Radio Range & 30 Meters  & 100 Meters \\ \hline
+		Transmission Speed &  \multicolumn{2}{|c|}{ 54 Mbps   }        \\ \hline
+		Router             & \multicolumn{2}{|c|}{ DRRA | Epidemic   } \\ \hline
+		Moving Speed       &   \multicolumn{2}{|c|}{0.5 - 1.5 m/s }        \\ \hline
+		Movement Model     &   \multicolumn{2}{|c|}{Group Movement Model  }      \\ \hline
 	\end{tabular}
 \end{table}
 \end{frame}
 %------------------------------------------------
 \begin{frame}
-	\frametitle{Simulation Results}
-\begin{figure}
-\centering
-\includegraphics[width=0.6\linewidth]{Figures_Present/DeliveryRatio}
-\caption{Delivery Ratio per Node Density}
-\label{fig:DeliveryRatio}
-\end{figure}
+	\frametitle{Metrics}
+\begin{equation}
+	\label{delivery_ratio}
+	D_{r} =\frac { { M }_{ delivered } }{ { M }_{ created } } 
+\end{equation}
+
+\begin{eqnarray}
+	\label{eq:new_energy}
+	{ E }_{ P }\quad \propto { \quad M }_{P }\cdot{ r }_{ P }^{ 2 }
+\end{eqnarray}	
+
+\begin{eqnarray}
+	\label{eq:delivery_performance}
+	{ D }_{ P }=\frac { { D }_{ r }^{ P } }{ { E }_{ P,B } } =\frac { { D }_{ r }^{ P } }{ \left( \frac { { M }_{ P }{ \cdot r }_{ P }^{ 2 } }{ { M }_{ B }\cdot { r }_{ B }^{ 2 } }  \right)  } 
+\end{eqnarray}
+
 \end{frame}
 %------------------------------------------------
 \begin{frame}
 	\frametitle{Simulation Results}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.6\linewidth]{Figures_Present/NetworkPerformance}
-		\caption{Network Performance per Node Density}
-		\label{fig:NetworkPerformance}
-	\end{figure}
+	\framesubtitle{Delivery Ratio per Node Density}
+	\begin{center}
+		\includegraphics[height=0.75\textheight]{Graphs/DeliveryRatio.pdf}
+	\end{center}
 \end{frame}
-%------------------------------------------------
 %------------------------------------------------
 \begin{frame}
 	\frametitle{Simulation Results}
-\begin{figure}
-\centering
-\includegraphics[width=0.6\linewidth]{Figures_Present/MultipleRVs}
-\caption{Multiple Rendezvous Places}
-\label{fig:MultipleRVs}
-\end{figure}
+	\framesubtitle{Network Performance per Node Density}
+	\begin{center}
+		\includegraphics[height=0.75\textheight]{Graphs/NetworkPerformance.pdf}
+	\end{center}
 \end{frame}
-%------------------------------------------------
 %------------------------------------------------
 \begin{frame}
 	\frametitle{Simulation Results}
-\begin{figure}
-\centering
-\includegraphics[width=0.6\linewidth]{Figures_Present/Utilization}
-\caption{Network Performance per Utilization Ratio}
-\label{fig:Utilization}
-\end{figure}
+	\framesubtitle{The Optimum between Delivery Ratio and Delivery Performance}
+	\begin{center}
+		\includegraphics[height=0.75\textheight]{Graphs/NpsDeliveryPerformanceAndDeliveryRatio.pdf}
+	\end{center}
 \end{frame}
 %------------------------------------------------
+% \begin{frame}
+% 	\frametitle{Simulation Results}
+% 	\framesubtitle{Number of Created Messages per Node Density}
+% 	\begin{center}
+% 		\includegraphics[height=0.75\textheight]{Graphs/messages.pdf}
+% 	\end{center}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Simulation Results}
+% 	\framesubtitle{Multiple Rendezvous Nodes}
+% 	\begin{center}
+% 		\includegraphics[height=0.75\textheight]{Graphs/MultipleRVs.pdf}
+% 	\end{center}
+% \end{frame}
+
+
+% \begin{frame}
+% 	\frametitle{Simulation Results}
+% 	\framesubtitle{$R_c^{max}/R_{rv}$ ratio}
+% 	\begin{center}
+% 		\includegraphics[height=0.75\textheight]{Graphs/RcmaxRrv.pdf}
+% 	\end{center}
+% \end{frame}
 %------------------------------------------------
 \begin{frame}
 	\frametitle{Conclusion}
@@ -395,7 +347,8 @@ Thammasat University \\ % Your institution for the title page
 	\item The carried node can gain higher network performance if the sleep mode is longer than awake mode.
 \end{itemize}
 \end{frame}
-%------------------------------------------------
+
+
 %------------------------------------------------
 \section{Data-wise Opportunistic Routing with Spatial Information}
 %------------------------------------------------
@@ -471,25 +424,16 @@ $ \xi ({ D }_{ l }^{ j },t)=\begin{cases} 0;{ \tau  }_{ t }>{ \tau  }_{ max } \\
 \end{figure}
 \end{frame}
 %------------------------------------------------
-\begin{frame}
-	\frametitle{Simulation Results}
-\begin{figure}
-\centering
-\includegraphics[width=0.5\linewidth]{Figures_Present/Fig5-eps-converted-to}
-\caption{Average Delivered Time per Deadline on Significant Level}
-\label{fig:Fig5-eps-converted-to}
-\end{figure}
-\end{frame}
-%------------------------------------------------
-\begin{frame}
-	\frametitle{Simulation Results}
-\begin{figure}
-\centering
-\includegraphics[width=0.5\linewidth]{Figures_Present/Fig6-eps-converted-to}
-\caption{DORSI Delivery Ratio on each class}
-\label{fig:Fig6-eps-converted-to}
-\end{figure}
-\end{frame}
+% \begin{frame}
+% 	\frametitle{Simulation Results}
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.5\linewidth]{Figures_Present/Fig5-eps-converted-to}
+% \caption{Average Delivered Time per Deadline on Significant Level}
+% \label{fig:Fig5-eps-converted-to}
+% \end{figure}
+% \end{frame}
+
 %------------------------------------------------
 \begin{frame}
 	\frametitle{Simulation Results}
@@ -505,21 +449,31 @@ $ \xi ({ D }_{ l }^{ j },t)=\begin{cases} 0;{ \tau  }_{ t }>{ \tau  }_{ max } \\
 	\frametitle{Simulation Results}
 \begin{figure}
 \centering
-\includegraphics[width=0.5\linewidth]{Figures_Present/Fig8-eps-converted-to}
-\caption{Effective Replication Ration Comparison}
-\label{fig:Fig8-eps-converted-to}
+\includegraphics[width=0.5\linewidth]{Figures_Present/Fig6-eps-converted-to}
+\caption{DORSI Delivery Ratio on each class}
+\label{fig:Fig6-eps-converted-to}
 \end{figure}
 \end{frame}
 %------------------------------------------------
-\begin{frame}
-	\frametitle{Simulation Results}
-\begin{figure}
-\centering
-\includegraphics[width=0.5\linewidth]{Figures_Present/Fig9-eps-converted-to}
-\caption{EDR on different classification scale}
-\label{fig:Fig9-eps-converted-to}
-\end{figure}
-\end{frame}
+% \begin{frame}
+% 	\frametitle{Simulation Results}
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.5\linewidth]{Figures_Present/Fig8-eps-converted-to}
+% \caption{Effective Replication Ration Comparison}
+% \label{fig:Fig8-eps-converted-to}
+% \end{figure}
+% \end{frame}
+% %------------------------------------------------
+% \begin{frame}
+% 	\frametitle{Simulation Results}
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.5\linewidth]{Figures_Present/Fig9-eps-converted-to}
+% \caption{EDR on different classification scale}
+% \label{fig:Fig9-eps-converted-to}
+% \end{figure}
+% \end{frame}
 %------------------------------------------------
 \begin{frame}
 	\frametitle{Conclusion}
@@ -544,9 +498,55 @@ $ \xi ({ D }_{ l }^{ j },t)=\begin{cases} 0;{ \tau  }_{ t }>{ \tau  }_{ max } \\
 	
 \end{frame}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%------------------------------------------------
+
 \begin{frame}[allowframebreaks]
 \frametitle{References}
     \tiny{\bibliographystyle{abbrv} }
     \bibliography{refs}
 \end{frame}
+
 \end{document}
