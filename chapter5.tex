@@ -10,8 +10,8 @@
 This chapter provides a summary overview of this thesis works and discusses how the proposed algorithms in this thesis can contribute to the field of opportunistic network routing.
 
 %=============================================================================
-\section{Discussion}
-\label{DORSI:Discussion}
+% \section{Discussion}
+% \label{DORSI:Discussion}
 %=============================================================================
 
 This thesis has mode two major research contributions with several sub-routing algorithms in each major field of opportunistic routing to address the problem in sparse network environments.
@@ -20,9 +20,6 @@ First we discuss about how the Rendezvous based routing algorithms can improve t
 %%
 Then, a data-wise routing in opportunistic networks is discussed.
 
-%=============================================================================
-\subsection{Discussion about Chapter \ref{DRRA} on Dynamic Rendezvous based Routing Algorithm}
-
 In chapter \ref{DRRA}, we present the routing technique based on the meeting point of Rendezvous concept to bridge the gap between the space and time domain.
 %%
 At first, we introduce the \textit{store-carry-forward} paradigm employed by most routing algorithms by which a node can keep the receiving messages, carrying the messages with them when moving and then forwarding the messages copies to the opportunistic meeting nodes when possible.
@@ -30,7 +27,7 @@ At first, we introduce the \textit{store-carry-forward} paradigm employed by mos
 Then, we point out the problem of most existing routing models since they work well in the networks with high-to-moderate node density in which the opportunity that the moving nodes can meet with each other is rather high.
 %%
 As a result, most opportunistic routing algorithms perform poorly with delivery ratio becomes remarkably low in the sparse network environment especially when there is strict constraint on message delivery deadline.
-
+%%
 Our proposed system introduces the novel concept of rendezvous place where the passing nodes can announce, deposit or pickup their own messages without having to meet the other nodes carrying the desired message.
 %%
 In the proposed scheme, the rendezvous place can be detected automatically and its area's size and shape are dynamically changed according to the interaction among nodes passing around the area with our proposed \emph{Rumor protocol} and \emph{Sweep protocol}.
@@ -48,28 +45,42 @@ This means we can increase the delivery ratio while maintaining the energy utili
 We believe that the optimum of delivery ratio and delivery performance on the power saving factor can be a significant factor to design an practical applications on the extreme opportunistic networks.
 
 %=============================================================================
-\subsection{Discussion about Chapter \ref{DORSI} on the Data--wise Opportunistic Routing}
+% \subsection{Discussion about Chapter \ref{DORSI} on the Data Classification}
 
-Opportunistic network is a challenged networks where network contacts are intermittent and link performance is highly variable or extreme. This revolutionary network deploys store-carry-forward paradigm to deal with the occasionally partial-connectivity or node mobility in the network. The local forwarding decision of this type of network is based on the current and future connectivity information. Most of the routing in opportunistic networks consider forwarding decision based on locally collected knowledge about node behavior to predict the delivery probability of each node. However, none of these routing techniques concerns about the data content. This paper proposes a novel routing scheme called Data-wise Opportunistic Routing with Spatial Information (DORSI), based on the classification level of the data in addition to the spatial information of the nodes. The forwarding algorithm of this routing is determined by significant level, security level and deadline of messages. To conform with actual applications, the scenario of multi-level security in military tactical network is designed as a test bed. Simulation results of DORSI show that the key performances improve over the traditional opportunistic routing. As a result, this novel protocol can guarantee higher delivery ratio on data with higher priority within time limit while restricting the replicas of data with higher security level.
-
+Chapter \ref{DORSI} describes a technique to classify the data message in order to differentiate the messages to route differently on the opportunistic networks.
+%%
+Most of the routing protocols in opportunistic networks consider forwarding decision based solely on locally collected knowledge about node behavior to predict the delivery probability of each node. 
+%%
+However, only a few of these routing techniques concerns about the data content, and none of them involve the practical scenario of data classification. 
+%%
+This chapter proposes a novel routing scheme called Data-wise Opportunistic Routing with Spatial Information (DORSI), based on the classification level of the data in addition to the spatial information of the nodes. 
+%%
+The forwarding algorithm of this routing is determined by significant level, security level and deadline of messages. 
+%%
+We introduced three key parameters for the routing decision: \emph{priority value}, \emph{replication probability value} and \emph{node ranking value}.
+%%
+To conform with actual applications in the real world environments, the scenario of multi-level security in military tactical network is designed as a test bed for our simulations. 
+%%
+In addition, two composite metrics are proposed to analyze the key performance of our designed protocols: \emph{effective delivery ratio} and \emph{effective replication ratio}.
+%%
+The results show that the key performances improve over the traditional opportunistic routing. 
+%%
+As a result, this novel protocol can guarantee higher delivery ratio on data with higher priority within time limit while restricting the replicas of data with higher security level.
+%%
+We believe that this proposed method can further increase the delivery performance of the Rendezvous based routing protocol.
 %=============================================================================
-\section{Conclusion}
-\label{DORSI:Conclusion}
-%=============================================================================
 
-
-
-
-
-%=============================================================================
-\section{Future Work}
-\label{DORSI:Future Work}
-%=============================================================================
+All in all, our proposed protocols can address the delivery efficiency issues of sparse opportunistic network environment especially the messages with deadline constraints.
+%%
+The advancement in the software defined or virtualized nodes has made it possible for our proposed protocols to be implemented in the real world scenarios.
+%%
 Throughout each chapter of the thesis, we discussed the future work that we plan to do regarding the work of that specific factor.
 %%
 Beside these plans, we also would like to work on the following issues.
 %%
-First of all, 
+First of all, the concept of data-wise routing and rendezvous based routing can be combined as a hybrid protocol.
+%%
+The smarter nodes with this hybrid protocol can utilize the concept of space and time domain with the content of data to find the optimal forwarding decision in the opportunistic environment.
 
 
 
