@@ -6,7 +6,7 @@
 % \SVN $Date: 2014-05-12 13:30:42 +0700 (Mon, 12 May 2014) $
 % \SVN $URL: https://sandilands.info/svn/Common/Styles/siitthesis/chapter1.tex $
 
-Opportunistic networks are one of the most interesting evolutions of multi-hop wireless network especially in Mobile Ad-hoc Networks (MANETs).
+Opportunistic networks (OppNets) are one of the most interesting evolutions of multi-hop wireless network especially in Mobile Ad-hoc Networks (MANETs).
 %%
 On the one hand, MANETs characterize an approach to conceal the mobility of the nodes by constructing \emph{stable} end-to-end paths for communications. 
 %%
@@ -36,21 +36,36 @@ The chaotic situation, in which the nodes are moving disorderly and aimlessly, i
 %% talk about vehicle
 In the recent years the vehicle communications have attracted a great deal of attention with an aim to provide connectivity to commuters.
 %%
-The Vehicle-Infrastructure Connectivity such as \cite{Khabbaz2011,Morris2000,Singh2002,Kun-De2002,Briesemeister2000,Gavrilovich2001,Wang2010,Qi2011,DING201432,Kumar201422} has emerged as a means to enhance traffic safety and reduce the disasterous costs of vehicle collisions \cite{Khabbaz2012}.
-
-
-%% talk about people
-
-
-
+The Vehicle-Infrastructure Connectivity such as \cite{Khabbaz2011,Morris2000,Singh2002,Kun-De2002,Briesemeister2000,Gavrilovich2001,Wang2010,Qi2011,DING201432,Kumar201422} has emerged as a means to enhance traffic safety and reduce the disastrous costs of vehicle collisions \cite{Khabbaz2012} utilizing the opportunistic network concept.
+%%
+%Talk about Social
+The most interesting direction of opportunistic network is the social networking which Exploiting the social behavior of users occupying a large portion of an individual’s daily life to define the basic mechanisms of users’ movements \cite{boldrini2008}.
+%
+This increasing trend basically comes from the repidly growth of smart mobile devices to enable the concept of \emph{people-centric networking} \cite{Conti2014} since these mobile phones can move, and move with people.
+%
+Such mobile multihop networks present numerous research challenges such as PeerSoN \cite{Sonja2009,PeerSoN}, PeopleNet \cite{Motani2005}, The Haggle Project \cite{Haggle,Papandrea2009}, COSN framework \cite{Garg2012}.
+%
+Furthermore, the \emph{opportunistic sensing} such as MetroSense project \cite{Campbell2008} is operated by exploiting the people-centric mobility to sense the devices available in the environment whenever there is a match with the application requirements. 
+%
+This mobile sensing concept can be used as location-aware data collection instruments for for real world observations \cite{Conti2014}.
+%
+Moreover, the opportunistic network can be exploited to provide the connectivity in underdeveloped regions.
+%
+For example, DakNet \cite{Pentland2004} is a project that aims to provide the network connectivity for the remote villages using any connection-enabled vehicle passing by.
+%%
+In fact, there are several applications in opportunistic networks \cite{Kärkkäinen2013} from different approaches such as mining, message-based applications, stream-based applications or floating content that provides a communication abstraction to allows applications to post contents to a kind of the message boards that offers geographically limited accessibility \cite{Ott2011}.
 
 %=============================================================================
 \section{Problem Statement}
 \label{intro:Problem Statement}
 %=============================================================================
+Typically in OppNets, a store-carry-forward technique is employed on the mobile nodes which enables them to indefinitely carry messages until they can be further forwarded.
+%
 In this store-carry-forward paradigm, the network suffers the decreasing of performance in the insufficient collaborating nodes environment \cite{Nousiainen2013,Spyropoulos2010}.
+%
 Since the node holding the data requires next-hop neighbor nodes to forward the data to, the sparse network environment is normally unable to satisfy opportunistic routing.
-As a result, there is a need for an innovative protocol design to address this deficiency of OppNets.
+%
+Considering this problem, there is a need for an innovative protocol design to address this deficiency of OppNets.
 
 In addition, none of the traditional routings in OppNets concern about the data content of the messages. 
 If the significance of data is considered as the performance matrix, the network effectiveness of OppNets also drops in sparse network. 
