@@ -1,0 +1,258 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"latex",
+				"LaTeXing: Install License"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"latexing",
+				"Preferences: LaTeXing Settings - User"
+			],
+			[
+				"latexing ",
+				"Preferences: LaTeXing Settings - Default"
+			],
+			[
+				"latexin ",
+				"Preferences: LaTeXing Settings - User"
+			],
+			[
+				"latexing se",
+				"Preferences: LaTeXing Settings - User"
+			],
+			[
+				"bib",
+				"Snippet: BibTeX Article"
+			],
+			[
+				"Snippet: Bibtex ",
+				"Snippet: BibTeX Article"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Arm/Desktop/Paper_Springer_58/llncs2e/llncs.tex",
+		"/Users/Arm/Downloads/[Basic Research] การวิจัยจรวดต่อสู้รถถัง Anti-Tank.xml",
+		"/Users/Arm/Downloads/[Basic Research] การวิจัยวัสดุที่ใช้ในอุตสาหกรรมป้องกันประเทศ.xml",
+		"/Users/Arm/Downloads/[Basic Research] การวิจัยการประยุกต์ใช้เทคโนโลยี Flow Forming.xml",
+		"/Users/Arm/Downloads/[Basic Research] การวิจัยและพัฒนาการเก็บสะสมพลังงานในแบตเตอรี่.xml",
+		"/Users/Arm/Downloads/[Basic Research] การวิจัยและพัฒนาองค์ความรู้ด้านอากาศพลศาสตร์.xml",
+		"/Users/Arm/Downloads/[Basic Research] การวิจัยและพัฒนารถยนต์ไร้คนขับ (Unmanned Ground Vehide).xml",
+		"/Users/Arm/Downloads/[Basic Research] การวิจัยและพัฒนายานไร้คนขับปีกกระพือ (Unmanned Flapping Wing Vehicle).xml",
+		"/Users/Arm/Downloads/[Basic Research] การวิจัยและพัฒนายานพาหนะใต้น้ําไร้คนขับ (Unmanned Underwater Vehicle).xml",
+		"/Users/Arm/Downloads/[Basic Research]  การวิจัยเทคโนโลยีระบบสื่อสารและระบบนําวิถีสําหรับจรวดสมรรถนะสูง.xml",
+		"/Users/Arm/Desktop/RendezvousJournal/Rendezvous Journal.tex",
+		"/Users/Arm/Downloads/[Basic Research] การวิจัยระบบ Automatic Suspect Vehicle Recognition_ ASVR.xml",
+		"/Users/Arm/Desktop/myThesis/chapter1.tex",
+		"/Users/Arm/Desktop/myThesis/appendixA.tex",
+		"/Users/Arm/Desktop/myThesis/refs.bib",
+		"/Users/Arm/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/Users/Arm/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+		"/Users/Arm/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing/mendeley.map",
+		"/Users/Arm/Library/Application Support/Sublime Text 3/Packages/LaTeXing/latexing/api/mendeley.map",
+		"/Users/Arm/Desktop/RendezvousJournal/Graphs/movement.csv",
+		"/Users/Arm/Desktop/myThesis/thesis.tex",
+		"/Users/Arm/Desktop/myThesis/chapter2.tex",
+		"/Users/Arm/Downloads/TeamworkPM-User-Import-Sample-CSV.csv",
+		"/Users/Arm/Downloads/OG.csv",
+		"/Users/Arm/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Arm/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/Arm/Downloads/essay_2/essay_2.tex",
+		"/Users/Arm/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeX.sublime-build",
+		"/Users/Arm/Library/Application Support/Sublime Text 3/Packages/User/xelatex.sublime-build",
+		"/Users/Arm/Library/Application Support/Sublime Text 3/Packages/User/LaTeX.sublime-build",
+		"/Users/Arm/Dropbox/cv_7/jobname.bib",
+		"/Users/Arm/Dropbox/cv_7/cv_7.tex",
+		"/Users/Arm/Dropbox/Second Journal/Journal in 2 Column/Graphs/NewDeliveryPerformance.csv",
+		"/Users/Arm/Dropbox/achemso/achemso-demo.tex",
+		"/Users/Arm/Downloads/achemso/achemso-demo.tex",
+		"/Users/Arm/Desktop/test.tex",
+		"/Users/Arm/Dropbox/Second Journal/Journal in 2 Column/Graphs/Transpose-Delivery Ratio.csv",
+		"/Users/Arm/Dropbox/Second Journal/Journal in 2 Column/Rendezvous Journal v2.tex",
+		"/Users/Arm/Dropbox/Second Journal/Journal in 2 Column/Rendezvous Journal copy.tex",
+		"/Users/Arm/Dropbox/My Thesis/template/main.tex",
+		"/Users/Arm/Downloads/ThesisTemplate_SIIT_2014/Thesis Template_SIIT_2014/Abstract.tex",
+		"/Users/Arm/Downloads/ThesisTemplate_SIIT_2014/Thesis Template_SIIT_2014/04Abstract_SIIT.tex",
+		"/Users/Arm/Dropbox/test.mm",
+		"/Users/Arm/Downloads/latex/unix_latex_template/bare_conf.tex",
+		"/Users/Arm/Dropbox/Second Journal/Journal in 2 Column/Rendezvous Journal.tex",
+		"/Users/Arm/Downloads/10.1023%2FA%3A1011474616255.bib",
+		"/Users/Arm/Dropbox/First Journal/IEEE Tamplate/My Journal 2 column (Arm-MacBook-Pro's conflicted copy 2013-08-09).tex",
+		"/Users/Arm/Dropbox/Second Journal/Journal in 2 Column/RendezvousJournal.bib"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"criminal or suspect"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"criminal/suspect"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "Project_Thesis.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 267.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
