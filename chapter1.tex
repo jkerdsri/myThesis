@@ -59,57 +59,115 @@ In fact, there are several applications in opportunistic networks \cite{Kärkkä
 \section{Problem Statement}
 \label{intro:Problem Statement}
 %=============================================================================
-Typically in OppNets, a store-carry-forward technique is employed on the mobile nodes which enables them to indefinitely carry messages until they can be further forwarded.
+
+
+Typically in the OppNets, a Store-Carry-Forward (SCF) technique has been employed on the mobile nodes which enables them to indefinitely carry the messages until they can be further forwarded.
 %
-In this store-carry-forward paradigm, the network suffers the decreasing of performance in the insufficient collaborating nodes environment \cite{Nousiainen2013,Spyropoulos2010}.
+In this SCF paradigm, the network suffers the decreasing of performance in the insufficient collaborating nodes environment \cite{Nousiainen2013,Spyropoulos2010}.
 %
-Since the node holding the data requires next-hop neighbor nodes to forward the data to, the sparse network environment is normally unable to satisfy opportunistic routing.
+Since the node holding the data requires next-hop neighbor nodes to forward the data to, the sparse network environment is basically unable to satisfy opportunistic routing.
+%
+Therefore, such SCF routing technique cannot guarantee 100\% delivery rate. 
+%
+Moreover, the delivery ratio becomes remarkably low in the sparse network environment especially when there is a strict constraint on message delivery deadline.
+%
+To the best of our knowledge, the problem of performance degrading in such extreme sparse opportunistic network environments have not been precisely addressed.
 %
 Considering this problem, there is a need for an innovative protocol design to address this deficiency of OppNets.
+%
+In this thesis, we propose the algorithms to address the mentioned critical problem of OppNet routing.
+%
+In the proposed approaches, we use different routing techniques and work on different OppNet scenarios, however our common aim is to increase the delivery ratio in sparse network.
 
-In addition, none of the traditional routings in OppNets concern about the data content of the messages. 
-If the significance of data is considered as the performance matrix, the network effectiveness of OppNets also drops in sparse network. 
-In several environments, it is essential that the important messages from source to the destination nodes should be specially treated in order to guarantee deliverable.
-Therefore, it is crucial to implement a new protocol to increase the delivery ratio of important data for critical data network such as military tactical network or disaster relief network.
+% In addition, none of the traditional routings in OppNets concern about the data content of the messages. 
+% If the significance of data is considered as the performance matrix, the network effectiveness of OppNets also drops in sparse network. 
+% In several environments, it is essential that the important messages from source to the destination nodes should be specially treated in order to guarantee deliverable.
+% Therefore, it is crucial to implement a new protocol to increase the delivery ratio of important data for critical data network such as military tactical network or disaster relief network.
 
-In this thesis, we study the algorithms to address the perform deficiency in sparse opportunistic network environment.
-In each approach, we use different routing techniques and work on different OppNets scenarios, however our common aim is to increase the performance in sparse network.
+
 %=============================================================================
 \section{Objective and Scope}
 \label{intro:Objective and Scope}
 %=============================================================================
-Objective of this research is to increase the network performance in OppNets especially the delivery ratio and other key composite matrices performance index in different schemes.
-The scope of this research is based on the assumption of mobile nodes and environment in different network schemes that elaborate in each proposed approaches.
+The objective of this research is to define the methods to increase the delivery ratio of the messages with limited deadline in the opportunistic networks.
+%
+For this thesis, we focus on the routing protocol implementation with the scope of sparse network environments.
 
 %=============================================================================
 \section{Proposed Approaches}
 \label{intro:Proposed Approaches}
 %=============================================================================
 From aforementioned problem statements, this thesis proposed the following approaches:
+
 \begin{itemize}
-  \item %DORSI: Data-wise Opportunistic Routing with Spatial Information
-  We proposed a protocol to classify the messages based on the information sensitivity concept along with nodes prioritization technique corresponding to the their delivery probability computed by spatial data. 
-  This protocol classifies the messages according to their significant level, security level and deadline relative to the sensitivity level of data. 
-  In addition we adapts the geographical routing technique to select the best candidate node to forward the messages to the destination. 
-  Simulation experiments clearly illustrate that two key performance indexes: (1) effective delivery ratio and (2) effective replication ratio remarkably improve over the traditional Epidemic routing. 
-  
-  
-  \item %Dynamic Rendezvous based Routing Algorithm on Sparse Opportunistic Network Environment 
-In order to address the problem in sparse network, we proposed the use of Rendezvous based concept in order to maintain the messages in one place as long as the messages are delivered. 
-By injected a special node $N_{rv}$ into the network, the gap between time and space domain of mobile nodes are bridge. Messages can be transferred from source node to destination node even if they are not in the same location at the same time with the help of rendezvous node. 
-The results clearly show that the delivery ratio of Rendezvous based protocol significant improve over Epidemic protocol especially in the sparse environment.
+\item %Dynamic Rendezvous based Routing Algorithm on Sparse Opportunistic Network Environment 
+In order to address the problems in the sparse networks, we require to increase the message transferring opportunities as much as possible.
+%
+In the first approach, we proposed the use of Rendezvous based concept in order to maintain the messages in one place as long as the messages are delivered. 
+%
+By injecting a special Rendezvous node ($N_{rv}$) into the network, the gap between time and space domain of the mobile nodes can be bridged. 
+%
+Messages can be transferred from source node to destination node even if they are not in the same location at the same time with the help of the Rendezvous node.
+% 
+The results clearly show that the delivery ratio of proposed Rendezvous based protocol significant improve over Epidemic protocol especially in the sparse environment.
+
+\item %DORSI: Data-wise Opportunistic Routing with Spatial Information
+Nevertheless, the delivery ratio cannot further maximize in the extremely low node density.
+%
+Therefore, we aim to increase the deliver ability of significant messages to guarantee the critical data deliverable especially the messages with the expiration time constraint. 
+%
+We proposed a protocol to classify the messages based on the information sensitivity concept along with nodes prioritization technique corresponding to the their delivery probability computed by spatial data. 
+%
+This protocol classifies the messages according to their significant level, security level and deadline relative to the sensitivity level of data.
+% 
+In addition we adapts the geographical routing technique to select the best candidate node to forward the messages to the destination. 
+%
+Simulation experiments clearly illustrate that two key performance indexes: (1) effective delivery ratio and (2) effective replication ratio remarkably improve over the traditional Epidemic routing. 
 \end{itemize}
 
 %=============================================================================
 \section{Our Contributions}
 \label{intro:Our Contributions}
 %=============================================================================
+In this thesis, we propose two new opportunistic routing algorithms.
+%
+\begin{itemize}
+	\item We propose the Dynamic Rendezvous based Routing Algorithm (DRRA) on Sparse Opportunistic Network Environment which introduces the novel concept of rendezvous place where the passing nodes can announce, deposit or pickup their own messages without having to meet the other nodes carrying the desired message.
+	%
+	In the proposed scheme, the rendezvous place can be detected automatically and its area’s size and shape are dynamically changed according to the interaction among nodes passing around the area. 
+	%
+	The results from extensive simulations show that our proposed routing algorithm can achieve higher delivery ratio and utilize lower energy consumption than traditional opportunistic routing algorithms especially in sparse network environment.
+
+	\item We propose the Data-wise Opportunistic Routing with Spatial Information (DORSI), based on the classification level of the data in addition to the spatial information of the nodes. 
+	%
+	The forwarding algorithm of this routing is determined by significant level, security level and deadline of messages. 
+	%
+	To conform with actual applications, the scenario of multi-level security in military tactical network is designed as a test bed. 
+	%
+	Simulation results of DORSI show that the key performances improve over the traditional opportunistic routing. 
+	%
+	As a result, this novel protocol can guarantee higher delivery ratio on data with higher priority within time limit while restricting the replicas of data with higher security level.
+
+\end{itemize}
+
+%=============================================================================
+\section{Thesis Structure}
+%=============================================================================
+
 This thesis contains five chapters.
+%
 Chapter 1 gives an introduction of the research.
+%
 In addition, the problem statement, objective and scope, and proposed approaches are included in this chapter.
+%
 In Chapter 2 the background and related works on opportunistic networks are provided.
-Chapter 3 describes our message prioritization technique to differentiate the routing based on the significant level of messages.
+%
+Chapter 3 presents our approach of using the rendezvous place concept to overcome the limitation of insufficient collaborating nodes in sparse network environment.
+%
 The details of proposed method, simulation model, and performance evaluation are included in this chapter.
-Chapter 4 presents our approach of using the rendezvous place concept to overcome the limitation of insufficient collaborating nodes in sparse network environment.
+%
+Chapter 4 describes our message prioritization technique to differentiate the routing based on the significant level of messages.
+%
 The details of proposed method, simulation model, and performance evaluation are included in this chapter.
+%
 Chapter 5 includes the discussion, the conclusion and the recommendations for future studies.

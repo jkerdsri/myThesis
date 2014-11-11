@@ -6,7 +6,6 @@
 % \SVN $Date: 2014-05-12 13:30:42 +0700 (Mon, 12 May 2014) $
 % \SVN $URL: https://sandilands.info/svn/Common/Styles/siitthesis/chapter2.tex $
 
-
 Recently, wireless networking are witnessing several deployments in various extreme environments where they usually suffer from different levels of link disruptions depending on the severity of the operations. 
 Commonly, these networks are known as Intermittently Connected Networks (ICNs). 
 An ICNs, also known as a Challenged Network, is an infrastructure-less wireless network that supports the proper functionality of the wireless applications operating in stressful environments, where excessive delays and no existence of end-to-end path(s) between any arbitrary source-destination pair, result from highly repetitive link disruptions \cite{Khabbaz2012}.
@@ -22,9 +21,17 @@ Additionally, an explanation of Opportunistic Networks is presented in Section~\
 \label{bg:Delay Tolerant Networks}
 %=============================================================================
 DTNs is an overlay architecture with an aim to operate over the protocol stacks of the ICNs and enable gateway functionality between them through the use of storage capacity, a variety of protocol techniques, replication and parallel forwarding, forward error correction and many other techniques for overcoming the impairments of communication  \cite{Khabbaz2012}.
+%%
 DTNs enable the transferring of data in extremely challenging environments where networks are assumed to experience frequent, long-duration partitioning and may have no end-to-end connectivity between source and destination \cite{Liu2011}. 
+%%
 Therefore, the timer and acknowledgement mechanisms of the traditional TCP/IP protocol definitely fail in such circumstances \cite{Souza2010}.
+%%
 In addition, the routing algorithms designed for Mobile Ad hoc NETworks (MANETs) can not perform effectively under aforementioned constraints as well, since the availability of contemporaneous end-to-end connectivity is essential for conventional routing algorithms \cite{Yue2013}.
+%
+In such extreme condition such as military tactical network, DTN and Mobile Ad-hoc Network (MANET) are among several promising challenged researches aiming to improve network performance. 
+%%
+DTN protocols typically address sparse intermittently connected networks whereas MANET protocols address the fairly stable and fully connected ones. However, many intermediate situations may occur on mobility dynamics or radio link instability. 
+%%
 
 Basically the types of DTNs can be classified in 3 categories: scheduled networks, predictable networks and opportunistic networks as seen in Figure~\ref{fig:bg:Type of DTN}.
 In DTNs, predictable and scheduled networks are the common aim in designing the routing protocols in the highly disruptive environments such as Interplanetary Internet (IPN) \cite{Burleigh2003} where the contact time is not completely random but in periodic interval.
@@ -52,9 +59,58 @@ In the thesis, we study in the most extreme case of DTNs which is the opportunis
 \section{Opportunistic Networks}
 \label{bg:Opportunistic Networks}
 %=============================================================================
+An Opportunistic Network (OppNet) is an extreme type of Delay Tolerant Networks (DTNs) where the source and destination nodes might never be fully connected at the same time which means the communication contacts are intermittent.
+%
+Basically, the terms opportunistic networks and delay tolerant networks are occasionally used interchangeably. 
+%
+DTN usually computes the estimation of delivery delays in advance due to some degree of determinism of system variables. 
+%%
+This network scheme is suitable for extreme dynamic evolving network topology and limited information scenarios. 
+%
+On the other hand, opportunistic link in OppNet is highly dynamic and unpredictable so routes are computed at each hop when forwarding messages \cite{Bujari2012a}. 
+%
+This challenged network which is also referred as Intermittently Connected Mobile Network (ICMN), is involving mobile nodes to communicate with each other without existing complete end-to-end path from source to destination.
+%%
+Thus there is no guarantee on the existence of a complete path between two nodes wishing to communicate \cite{MWNsBook2011}.
+%%
+This intermittent connections may result from several factors such as high node mobility, low node density, environmental interference and obstruction, short radio range and malicious attacks \cite{prodhan2011}.
+%%
+The node movement in OppNet is extremely random in some networking environment, thus the probability of message delivery from source to destination is difficult to assure.
+%%
+Traditional routing protocols have been exhibited ineffective in coping with unreliable and unpredictable wireless medium \cite{Yang2009} since they implicitly assume that the network is connected and an end-to-end path always exists between any source and destination. 
+%
+This conventional infrastructure network commonly utilizes the network topology to route the message, thus it presents inadequate performance in highly dynamic topological environment. 
+%
+In such cases, where the network frequently splits into evolving connected groups, none of the conventional routing paradigms are fully satisfactory \cite{Whitbeck2010}. 
+%
+To address the problem of intermittent links and node mobility, local forwarding are exploited in order to transfer the messages. 
+%
+The applications of opportunistic network is typically used in an environment that is tolerant of long delay and high error rate such as MANET in battlefield communication \cite{Alspaugh2004} or DTN for interplanetary networking \cite{Jenkins2010}. 
+%
+Examples of such networks are sparse mobile ad hoc networks \cite{Alekeish2012}, military tactical networks \cite{Scott2005,Kerdsri2013} or sensor networks, such as ZebraNet \cite{zebranet2004}, SWIM \cite{Small2003}  in which nodes move throughout an environment, working to gather and process information about their surroundings.
+%%
+Commonly, the key differentiating factors among these scenarios are the levels of predictability and control over the contacts between the message carriers\cite{Karkkainen2013}.
+%
+Routes in opportunistic network are built dynamically based on knowledge about topological evolution of the network. 
+%
+Routing performance improves when acquiring more knowledge about the expected network topology. 
+%
+Nevertheless, a tradeoff between performance and knowledge requirement must be met since this kind of knowledge is difficult to acquire. 
+%
+If the knowledge is not available or difficult to achieve, epidemic routing (context-oblivious) might be the best option for communication \cite{bonaldo2011}.
+%
+Even though, this flooding based routing tends to minimize the latency, it consumes network resource and tends to degrade performance. 
+%
+Most of the existing routing schemes for opportunistic network rely on a priori knowledge topology information \cite{Pelusi2006}, especially focusing on the dissemination algorithms and policy to control or limit flooding \cite{Plymoth2010}.
+%
 In fact, Opportunistic networks focus on mobile ad-hoc DTNs, where tolerant delayed routes between the source and destination are built dynamically.
+%
 However, OppNets is different from MANETs that it does not assume the existing end-to-end connectivity.
+%
 Therefore, instead of depending on end-to-end MANETs routing protocols, the messages are delivered through one hop data transmission among opportunistic node encounters with intermediate node storage and mobility, called \textit{Store-Carry-Forward paradigm} \cite{Hu2009,Yamamura2011}. 
+%
+The opportunistic routing pattern, called store-carry-forward, takes an advantage of node mobility to forward the data buffered in the carried node to the next connected node during the opportunistic contacts. 
+%%
 In essential, there are three common steps of routing in OppNet \cite{Hsu2011}:
 \begin{itemize}
 	\item Broadcast the messages to candicate relayed nodes.
@@ -67,24 +123,82 @@ In essential, there are three common steps of routing in OppNet \cite{Hsu2011}:
 % •The characteristics of human (or vehicular) mobility
 % •The heterogeneity of node resources and mobility
 
-
-
 %=============================================================================
-\subsection{Opportunistic Routing}
+\section{Opportunistic Routing}
 \label{bg:Opportunistic Networks:Opportunistic Routing}
 %=============================================================================
 In this opportunistic routing, the nodes can exchange data in a spontaneous manner whenever they come in close.
+%
 If there is no direct connection from source to destination, data holding nodes will discover their nearest neighbor nodes to forward messages toward the destination node.
+%
 Thus, this opportunistic route is determined at each hop when messages traverse through different hops.
+%
 In this routing scheme, mobile nodes are normally equipped with local knowledge of the best nodes around them to determine the best path to transmit the messages with this knowledge.
+%
 In the case of such nodes absence, the node currently holding the message simply stores the messages and wait for an opportunity to forward the packets.
-This  infrastructure-less wireless network environment requires common 2 factors to facilitate the opportunistic routing \cite{Poonguzharselvi2013a} : 
+This  infrastructure-less wireless network environment requires common 2 factors to facilitate the opportunistic routing \cite{Poonguzharselvi2013a} :
+
 \begin{itemize}
 	\item Destination path finding:
 	Intermediate nodes are used to form paths dynamically since there is no fixed path from source to destination nodes.
 	\item Next hop forwarder selection:
 	Data holding nodes need to find a helper node that can forward the messages to the destination as soon as possible.
 \end{itemize}
+%%
+A key concept behind Opportunistic Routing (OR) is overhearing and cooperation among relaying nodes to overcome the drawback of unreliable wireless transmission \cite{Liu2009}.
+%%
+Since the mobile nodes are not always connected to each other, the forwarding algorithms in such networks commonly follow a store-carry-forward (SCF) paradigm.
+%%
+This SCF employs storage space and node mobility to overcome the intermittent connectivity \cite{Ma2011}.
+%%
+The messages sent from the source node are carried by intermediate nodes to other geographical areas and transfered to adjacent nodes until the destination node receives this message.
+%%
+Since this fundamental SCF routing model realistically requires a certain sufficient occasion of \emph{direct} encounter among moving nodes to exchange messages, its routing performance will highly degrade in the low-node-density sparse network \cite{Spyropoulos2010}.
+%%
+Although there are several existing OppNet routing solutions \cite{ Zhang2013, Chung-Ming2008, Spyropoulos2004, Grossglauser2002, Vahdat2000,Kerdsri2013} proposed in the literature, very few proposals address the problem in this sparse network environment especially when the OppNet nodes are energy-constrained \cite{Liguang2013,Eu2010} and the direction of their movement cannot be controlled.
+%%
+One interesting application of such OppNet environment is the sensor OppNet for wildlife monitoring and tracking \cite{zebranet2004, Small2003}.
+
+%=============================================================================
+\subsection{The SCF routing models}
+%=============================================================================
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=3in]{Figures/SFC.pdf}
+	\caption{Store Carry and Forward routing model}
+	\label{SFC}
+\end{figure}
+
+In OppNet, the messages are delivered using Store-Carry-Forward routing by which  the nodes can exchange data whenever they come in close.
+%%
+If there is no direct connection from source to destination, data holding nodes will discover their nearest neighbor nodes to forward messages toward the destination node as shown in Fig. \ref{SFC}.
+%%
+There are several existing works in the literature \cite{Vahdat2000, Harras2005, Neena2013, Lindgren2003,Brendan2005,Boldrini2007,Kerdsri2013} with the aim for 100\% delivery ratio which is quite difficult to achieve especially in sparse networks with constraints in energy consumption and message delivery deadline.
+
+Vahdat et al. \cite{Vahdat2000} proposed the epidemic routing using the uncontrolled flooding algorithm in which the replication of source data is not restricted with any limits in order to route the message from source to destination in the intermittently connected network.
+%%
+However, this type of routing incurs a significant demand on both bandwidth and buffer capacity.
+%%
+To address the excess traffic overhead, Khaled et al. \cite{Harras2005} proposed a Controlled Flooding  scheme which can limit the flooding by three parameters: Willingness probability, Time-to-Live, and Kill Time.
+%%
+Nevertheless, flooding based routing performance degradation has been reported in a very sparse network \cite{Neena2013}.
+
+Lindgren et al. \cite{Lindgren2003} proposed a prediction based routing called PROPHET (Probabilistic Routing Protocol using History of Encounters and Transitivity) by estimating the delivery predictability to indicate the probability of success in delivering a message to the destination from the local node.
+%%
+In this prediction based routing category, Brun et al. \cite{Brendan2005}  also proposed a protocol utilizing the motion vector of mobile nodes to predict the future location of mobile nodes by using the knowledge of relative velocities of a node and its neighbor nodes to predict the closest distance between two nodes.
+%%
+Although the prediction based approach can reduce traffic overhead in the network, but it fails to improve the performance in an extremely low node density scenario and, in some cases, results in the delivery ratio reduction.
+
+To refine the prediction based routing,  Boldrini et al. \cite{Boldrini2007}  proposed the History based routing (HiBOp) which exploits current context information for data forwarding decisions.
+%%
+Even though this context based routing approach can reduce the resource consumption in terms of network traffic and storage, its delay performance is significantly inferior to that of the Epidemic algorithm.
+%%
+Kerdsri et al. \cite{Kerdsri2013} proposed the DORSI protocol with the concept of content based routing which aims to classify the data in the network by messages' significance level in order to guarantee the delivery of more important data. 
+%%
+However, the decreasing in network performance under sparse environment is not mentioned in this proposed protocol.
+%%
+Overall, the performance of most existing algorithms are degrading in very sparse node density, and the energy consumption is not taken into the consideration which is a crucial factor in mobile sensor devices such as in wildlife monitoring.
 
 
 %=============================================================================

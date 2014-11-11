@@ -5,34 +5,10 @@
 % \SVN $Author: sgordon $
 % \SVN $Date: 2014-05-12 13:30:42 +0700 (Mon, 12 May 2014) $
 % \SVN $URL: https://sandilands.info/svn/Common/Styles/siitthesis/chapter3.tex $
-
-
-An Opportunistic Network (OppNet) is an extreme type of Delay Tolerant Networks (DTNs) where the source and destination nodes might never be fully connected at the same time.
-%%
-Thus there is no guarantee on the existence of a complete path between two nodes wishing to communicate \cite{MWNsBook2011}.
-%%
-This intermittent connections may result from several factors such as high node mobility, low node density, environmental interference and obstruction, short radio range and malicious attacks \cite{prodhan2011}.
-%%
-The node movement in OppNet is extremely random in some networking environment, thus the probability of message delivery from source to destination is difficult to assure.
-%%
-Examples of such networks are sparse mobile ad hoc networks \cite{Alekeish2012}, military tactical networks \cite{Scott2005,Kerdsri2013} or sensor networks, such as ZebraNet \cite{zebranet2004}, SWIM \cite{Small2003}  in which nodes move throughout an environment, working to gather and process information about their surroundings.
-%%
-Commonly, the key differentiating factors among these scenarios are the levels of predictability and control over the contacts between the message carriers\cite{Karkkainen2013}.
-%%
-A key concept behind Opportunistic Routing (OR) is overhearing and cooperation among relaying nodes to overcome the drawback of unreliable wireless transmission \cite{Liu2009}.
-%%
-Since the mobile nodes are not always connected to each other, the forwarding algorithms in such networks commonly follow a store-carry-forward (SCF) paradigm.
-%%
-This SCF employs storage space and node mobility to overcome the intermittent connectivity \cite{Ma2011}.
-%%
-The messages sent from the source node are carried by intermediate nodes to other geographical areas and transfered to adjacent nodes until the destination node receives this message.
-%%
-Since this fundamental SCF routing model realistically requires a certain sufficient occasion of \emph{direct} encounter among moving nodes to exchange messages, its routing performance will highly degrade in the low-node-density sparse network \cite{Spyropoulos2010}.
-%%
-Although there are several existing OppNet routing solutions \cite{ Zhang2013, Chung-Ming2008, Spyropoulos2004, Grossglauser2002, Vahdat2000,Kerdsri2013} proposed in the literature, very few proposals address the problem in this sparse network environment especially when the OppNet nodes are energy-constrained \cite{Liguang2013,Eu2010} and the direction of their movement cannot be controlled.
-%%
-One interesting application of such OppNet environment is the sensor OppNet for wildlife monitoring and tracking \cite{zebranet2004, Small2003}.
-
+%=============================================================================
+\section{The proposed Rendezvous based OppNet system}
+\label{DRRA:The proposed Rendezvous based OppNet system}
+%=============================================================================
 In this chapter, we proposed a novel Dynamic Rendezvous based Routing Algorithm (DRRA) to increase message exchanging opportunity even in the sparse network environment.
 %%
 We utilize the fact that there should be some node-gathering (Rendezvous) places forming somewhere at some specific time in the real network.
@@ -43,57 +19,11 @@ An energy constrained node should maximize its resource usage to communicate wit
 %%
 In the proposed scheme, the rendezvous place is dynamically marked by the help of a special controllable Rendezvous node and the proposed rumor protocol to let nodes in the rendezvous area exchange messages more efficiently without having to directly meet with the other nodes.
 
-%=============================================================================
-\section{The SCF routing models and existing works}
-\label{DRRA:The SCF routing models and existing works}
-%%=============================================================================
-
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=3in]{Figures/SFC.pdf}
-	\caption{Store Carry and Forward routing model}
-	\label{SFC}
-\end{figure}
-
-In OppNet, the messages are delivered using Store-Carry-Forward routing by which  the nodes can exchange data whenever they come in close.
-%%
-If there is no direct connection from source to destination, data holding nodes will discover their nearest neighbor nodes to forward messages toward the destination node as shown in Fig. \ref{SFC}.
-%%
-There are several existing works in the literature \cite{Vahdat2000, Harras2005, Neena2013, Lindgren2003,Brendan2005,Boldrini2007,Kerdsri2013} with the aim for 100\% delivery ratio which is quite difficult to achieve especially in sparse networks with constraints in energy consumption and message delivery deadline.
-
-Vahdat et al. \cite{Vahdat2000} proposed the epidemic routing using the uncontrolled flooding algorithm in which the replication of source data is not restricted with any limits in order to route the message from source to destination in the intermittently connected network.
-%%
-However, this type of routing incurs a significant demand on both bandwidth and buffer capacity.
-%%
-To address the excess traffic overhead, Khaled et al. \cite{Harras2005} proposed a Controlled Flooding  scheme which can limit the flooding by three parameters: Willingness probability, Time-to-Live, and Kill Time.
-%%
-Nevertheless, flooding based routing performance degradation has been reported in a very sparse network \cite{Neena2013}.
-
-Lindgren et al. \cite{Lindgren2003} proposed a prediction based routing called PROPHET (Probabilistic Routing Protocol using History of Encounters and Transitivity) by estimating the delivery predictability to indicate the probability of success in delivering a message to the destination from the local node.
-%%
-In this prediction based routing category, Brun et al. \cite{Brendan2005}  also proposed a protocol utilizing the motion vector of mobile nodes to predict the future location of mobile nodes by using the knowledge of relative velocities of a node and its neighbor nodes to predict the closest distance between two nodes.
-%%
-Although the prediction based approach can reduce traffic overhead in the network, but it fails to improve the performance in an extremely low node density scenario and, in some cases, results in the delivery ratio reduction.
-
-To refine the prediction based routing,  Boldrini et al. \cite{Boldrini2007}  proposed the History based routing (HiBOp) which exploits current context information for data forwarding decisions.
-%%
-Even though this context based routing approach can reduce the resource consumption in terms of network traffic and storage, its delay performance is significantly inferior to that of the Epidemic algorithm.
-%%
-Kerdsri et al. \cite{Kerdsri2013} proposed the DORSI protocol with the concept of content based routing which aims to classify the data in the network by messages' significance level in order to guarantee the delivery of more important data. 
-%%
-However, the decreasing in network performance under sparse environment is not mentioned in this proposed protocol.
-%%
-Overall, the performance of most existing algorithms are degrading in very sparse node density, and the energy consumption is not taken into the consideration which is a crucial factor in mobile sensor devices such as in wildlife monitoring.
-
-%=============================================================================
-\section{The proposed Rendezvous based OppNet system}
-\label{DRRA:The proposed Rendezvous based OppNet system}
-%=============================================================================
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{System model}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure*}[!t]
+\begin{figure*}[h]
 	\centering
 	\includegraphics[width=5.5in]{Figures/NewSystemModel.pdf}
 	\caption{System model}
@@ -109,6 +39,8 @@ As shown in Fig. \ref{System model}, the OppNet node, $N_{c}$, whose movement di
 The Rendezvous Rumor protocol and the Rendezvous Node Sweeping mechanism are used inside the Rendezvous area to facilitate the message exchange more effectively without the need of direct contact between the OppNet node and the high-resource direction-controllable Rendezvous node, $N_{rv}$, which acts as the center of the Rendezvous place.
 %%
 The Rendezvous nodes will move around the OppNet network to create suitable Rendezvous places according to the proposed \emph{Rendezvous Place Searching algorithm}.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{OppNet node's operational modes: "Full Power" and "Power Saving"}
