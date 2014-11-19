@@ -31,7 +31,7 @@ However, these prioritizing mechanisms aim to rank the messages by defined matri
 %%
 In contrast, DORSI protocol routes the data based solely on the content of data itself.
 
-Although all of the above mentioned the routing method by the content of message to limit the number of message flooding in the network. The messages traversing in the network are treated the same except containing different attributes. The routing decision depends on the sets of rules and nodes. In this paper, we propose a new routing technique to assure the deliverable of important data while maintain the lower message replicas. The routing decision depends on the class of data itself. In addition, we improve the overall performance by appending the geographic information for forwarding node selection.
+Although all of the above mentioned the routing method by the content of message to limit the number of message flooding in the network. The messages traversing in the network are treated the same except containing different attributes. The routing decision depends on the sets of rules and nodes. In this chapter, we propose a new routing technique to assure the deliverable of important data while maintain the lower message replicas. The routing decision depends on the class of data itself. In addition, we improve the overall performance by appending the geographic information for forwarding node selection.
 
 In this chapter, we present a routing protocol in opportunistic environment that dynamically prioritizes the candidate messages based on the content of the data. Since security is an increasing concern in military and other critical operation mission, it is vital to route data of different sensitivities differently. The most significant and sensitive data should be guaranteed its higher level of delivery and protection than common data. However, only few works have applied the well-defined information sensitivity concept such as Multi Level of Security (MLS) \cite{Kotrappa2010,marking2010} to network information such as routing information, QoS signaling and other management information \cite{Winjum2008}.
 
@@ -268,8 +268,9 @@ The higher ERR means more message replicas in the network resulting in excessive
 ERR=\frac { \sum _{ j=1 }^{ m }{ { S }_{ e }^{ j }{ M }_{ r }^{ j } }  }{ { M }_{ c }^{ j } } 
 \end{eqnarray}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Result}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[!h]
 \centering
@@ -309,7 +310,7 @@ The consequence from Fig. \ref{Fig:DORSI:Effective Delivery Ratio comparison} an
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=3in]{Graphs/DR_NodeDenstiy.pdf}
+\includegraphics[width=3in]{Graphs/DR_NodeDenstiy2.pdf}
 \caption{DORSI Delivery Ratio on each class}
 \label{Fig:DORSI:DORSI Delivery Ratio on each class}
 \end{figure}
@@ -420,11 +421,11 @@ The drawback of this protocol is high processing time since these executable nod
 \section{Conclusion}
 \label{DORSI:Conclusion}
 %=============================================================================
-In this paper, we propose a novel Data-wise Opportunistic Routing with Spatial Information (DORSI) in order to classify the messages based on the information sensitivity concept along with nodes prioritization technique corresponding to the their delivery probability computed by spatial data. 
+In this chapter, we propose a novel Data-wise Opportunistic Routing with Spatial Information (DORSI) in order to classify the messages based on the information sensitivity concept along with nodes prioritization technique corresponding to the their delivery probability computed by spatial data. 
 %%
 This protocol classifies the messages according to their significant level, security level and deadline relative to the sensitivity level of data. 
 %%
-Meanwhile, this paper adapts the geographical routing technique to select the best candidate node to forward the messages to the destination. 
+Meanwhile, this chapter adapts the geographical routing technique to select the best candidate node to forward the messages to the destination. 
 %%
 Simulation experiments clearly illustrate that two key performance indexes — effective delivery ratio and effective replication ratio — remarkably improve over the traditional Epidemic routing. Moreover, the delivery ratio of DORSI and Epidemic comparison shows notable overall enhancement of the network routing efficiency. 
 %%
@@ -440,9 +441,7 @@ An obvious extension of the work could be the evaluation of our approach on a vi
 %%
 Next, we will evaluate the performance of our method in different conditions in order to apply data classification routing technique on more general applications.
 %%
-For the future work, we consider incorporating the trustworthiness degree of each router node such as the node clearance level. 
-%%
-It might not be faster, however it would be more secure in terms of military network.
+
 
 
 

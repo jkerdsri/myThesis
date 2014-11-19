@@ -124,7 +124,7 @@ In essential, there are three common steps of routing in OppNet \cite{Hsu2011}:
 % •The heterogeneity of node resources and mobility
 
 %=============================================================================
-\section{Opportunistic Routing}
+\ section{Opportunistic Routing}
 \label{bg:Opportunistic Networks:Opportunistic Routing}
 %=============================================================================
 In this opportunistic routing, the nodes can exchange data in a spontaneous manner whenever they come in close.
@@ -147,7 +147,7 @@ This  infrastructure-less wireless network environment requires common 2 factors
 %%
 A key concept behind Opportunistic Routing (OR) is overhearing and cooperation among relaying nodes to overcome the drawback of unreliable wireless transmission \cite{Liu2009}.
 %%
-Since the mobile nodes are not always connected to each other, the forwarding algorithms in such networks commonly follow a store-carry-forward (SCF) paradigm.
+Since the mobile nodes are not always connected to each other, the forwarding algorithms in such networks commonly follow a store-carry-forward (SCF) paradigm as shown in Fig.\ref{SFC}.
 %%
 This SCF employs storage space and node mobility to overcome the intermittent connectivity \cite{Ma2011}.
 %%
@@ -159,10 +159,6 @@ Although there are several existing OppNet routing solutions \cite{ Zhang2013, C
 %%
 One interesting application of such OppNet environment is the sensor OppNet for wildlife monitoring and tracking \cite{zebranet2004, Small2003}.
 
-%=============================================================================
-\subsection{The SCF routing models}
-%=============================================================================
-
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=3in]{Figures/SFC.pdf}
@@ -170,35 +166,39 @@ One interesting application of such OppNet environment is the sensor OppNet for 
 	\label{SFC}
 \end{figure}
 
-In OppNet, the messages are delivered using Store-Carry-Forward routing by which  the nodes can exchange data whenever they come in close.
-%%
-If there is no direct connection from source to destination, data holding nodes will discover their nearest neighbor nodes to forward messages toward the destination node as shown in Fig. \ref{SFC}.
-%%
-There are several existing works in the literature \cite{Vahdat2000, Harras2005, Neena2013, Lindgren2003,Brendan2005,Boldrini2007,Kerdsri2013} with the aim for 100\% delivery ratio which is quite difficult to achieve especially in sparse networks with constraints in energy consumption and message delivery deadline.
+%=============================================================================
+%\subsection{The SCF routing models}
+%=============================================================================
 
-Vahdat et al. \cite{Vahdat2000} proposed the epidemic routing using the uncontrolled flooding algorithm in which the replication of source data is not restricted with any limits in order to route the message from source to destination in the intermittently connected network.
-%%
-However, this type of routing incurs a significant demand on both bandwidth and buffer capacity.
-%%
-To address the excess traffic overhead, Khaled et al. \cite{Harras2005} proposed a Controlled Flooding  scheme which can limit the flooding by three parameters: Willingness probability, Time-to-Live, and Kill Time.
-%%
-Nevertheless, flooding based routing performance degradation has been reported in a very sparse network \cite{Neena2013}.
+% In OppNet, the messages are delivered using Store-Carry-Forward routing by which  the nodes can exchange data whenever they come in close.
+% %%
+% If there is no direct connection from source to destination, data holding nodes will discover their nearest neighbor nodes to forward messages toward the destination node as shown in Fig. \ref{SFC}.
+% %%
+% There are several existing works in the literature \cite{Vahdat2000, Harras2005, Neena2013, Lindgren2003,Brendan2005,Boldrini2007,Kerdsri2013} with the aim for 100\% delivery ratio which is quite difficult to achieve especially in sparse networks with constraints in energy consumption and message delivery deadline.
 
-Lindgren et al. \cite{Lindgren2003} proposed a prediction based routing called PROPHET (Probabilistic Routing Protocol using History of Encounters and Transitivity) by estimating the delivery predictability to indicate the probability of success in delivering a message to the destination from the local node.
-%%
-In this prediction based routing category, Brun et al. \cite{Brendan2005}  also proposed a protocol utilizing the motion vector of mobile nodes to predict the future location of mobile nodes by using the knowledge of relative velocities of a node and its neighbor nodes to predict the closest distance between two nodes.
-%%
-Although the prediction based approach can reduce traffic overhead in the network, but it fails to improve the performance in an extremely low node density scenario and, in some cases, results in the delivery ratio reduction.
+% Vahdat et al. \cite{Vahdat2000} proposed the epidemic routing using the uncontrolled flooding algorithm in which the replication of source data is not restricted with any limits in order to route the message from source to destination in the intermittently connected network.
+% %%
+% However, this type of routing incurs a significant demand on both bandwidth and buffer capacity.
+% %%
+% To address the excess traffic overhead, Khaled et al. \cite{Harras2005} proposed a Controlled Flooding  scheme which can limit the flooding by three parameters: Willingness probability, Time-to-Live, and Kill Time.
+% %%
+% Nevertheless, flooding based routing performance degradation has been reported in a very sparse network \cite{Neena2013}.
 
-To refine the prediction based routing,  Boldrini et al. \cite{Boldrini2007}  proposed the History based routing (HiBOp) which exploits current context information for data forwarding decisions.
-%%
-Even though this context based routing approach can reduce the resource consumption in terms of network traffic and storage, its delay performance is significantly inferior to that of the Epidemic algorithm.
-%%
-Kerdsri et al. \cite{Kerdsri2013} proposed the DORSI protocol with the concept of content based routing which aims to classify the data in the network by messages' significance level in order to guarantee the delivery of more important data. 
-%%
-However, the decreasing in network performance under sparse environment is not mentioned in this proposed protocol.
-%%
-Overall, the performance of most existing algorithms are degrading in very sparse node density, and the energy consumption is not taken into the consideration which is a crucial factor in mobile sensor devices such as in wildlife monitoring.
+% Lindgren et al. \cite{Lindgren2003} proposed a prediction based routing called PROPHET (Probabilistic Routing Protocol using History of Encounters and Transitivity) by estimating the delivery predictability to indicate the probability of success in delivering a message to the destination from the local node.
+% %%
+% In this prediction based routing category, Brun et al. \cite{Brendan2005}  also proposed a protocol utilizing the motion vector of mobile nodes to predict the future location of mobile nodes by using the knowledge of relative velocities of a node and its neighbor nodes to predict the closest distance between two nodes.
+% %%
+% Although the prediction based approach can reduce traffic overhead in the network, but it fails to improve the performance in an extremely low node density scenario and, in some cases, results in the delivery ratio reduction.
+
+% To refine the prediction based routing,  Boldrini et al. \cite{Boldrini2007}  proposed the History based routing (HiBOp) which exploits current context information for data forwarding decisions.
+% %%
+% Even though this context based routing approach can reduce the resource consumption in terms of network traffic and storage, its delay performance is significantly inferior to that of the Epidemic algorithm.
+% %%
+% Kerdsri et al. \cite{Kerdsri2013} proposed the DORSI protocol with the concept of content based routing which aims to classify the data in the network by messages' significance level in order to guarantee the delivery of more important data. 
+% %%
+% However, the decreasing in network performance under sparse environment is not mentioned in this proposed protocol.
+% %%
+% Overall, the performance of most existing algorithms are degrading in very sparse node density, and the energy consumption is not taken into the consideration which is a crucial factor in mobile sensor devices such as in wildlife monitoring.
 
 
 %=============================================================================
@@ -244,7 +244,7 @@ This flooding based routing can be divided into 2 types:
 	Even tough the Epidemic routing can guarantees all nodes will eventually receive all messages, it incurs significant demand on both bandwidth and buffer.
 	\item Controlled:
 	Undoubtedly, uncontrolled flooding consume network resources which can seriously degrade the performance if the resources are scarce \cite{Tonguz2006}.
-	Therefore, there is a need to control the flooding by limit the number of packets to be replicated to reduce the network contention.
+	Therefore, there is a need to control the flooding by limiting the number of packets to be replicated to reduce the network contention.
 	Several researches proposed the algorithms to control the flooding such as controlled flooding, spray and wait and spray and focus.
 	\begin{itemize}
 		
@@ -356,7 +356,7 @@ In fact, both MobySpace and MV can be also viewed as one type of context based r
 \subsubsection{Coding Based}
 \label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CB}
 %%
-The coding based routing is proposed to address the transmission issues in very poor network connectivity.
+The coding based routing is proposed to apply coding techniques to improve the transmission issues in this intermittent  bnetwork connectivity.
 %%
 By transforming a message into another format prior to the transmission with embedded additional information, the coding based schemes are more robust than replication based routing because the original message can be reconstructed with only a certain number of the code blocks.
 %%
@@ -391,7 +391,8 @@ By transforming a message into another format prior to the transmission with emb
 \subsubsection{Content Based}
 \label{bg:Opportunistic Networks:Classification of Opportunistic Routing:CTB}
 %%
-Because of the Store-Carry-Forward paradigm requires a node to store and carry the messages in order to find the opportunity to forward the messages, the content storage can become the core service of opportunistic routing.
+Since the nature of SCF paradigm involves with data content stored in node storages, this content based routing utilizes the information of the delivered content to make the routing decision.
+% Because of the Store-Carry-Forward paradigm requires a node to store and carry the messages in order to find the opportunity to forward the messages, the content storage can become the core service of opportunistic routing.
 %%
 	\begin{itemize}
 		\item Content Classification:
