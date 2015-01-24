@@ -102,9 +102,9 @@
 \newcommand{\hmwkClass}{} % Course/class
 \newcommand{\hmwkClassTime}{} % Class/lecture time
 \newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
-\newcommand{\hmwkAuthorName}{Dynamic Rendezvous based Routing Algorithm on Sparse Opportunistic Network Environment} % Your name
+\newcommand{\hmwkAuthorName}{Dynamic Rendezvous based Routing Algorithm on Sparse Opportunistic Network Environment: IJDSN/819178.v1 : Jiradett Kerdsri and Komwut Wipusitwarakun} % Your name
 
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
@@ -141,15 +141,57 @@
 
 % To have just one problem per page, simply put a \clearpage after each problem
 
-\begin{homeworkProblem}
-% \lipsum[1]\vspace{10pt} % Question
-% [Question \#\arabic{homeworkProblemCounter}]
+\begin{homeworkProblem} 
+The authors introduce the concept of rendezvous place where the passing nodes can announce, deposit or pickup their own messages without having to meet the other nodes carrying the desired message. 
+%%
+In the proposed scheme, the rendezvous place is detected automatically and its area’s size and shape are dynamically changed according to the interaction among nodes passing around the area. 
+%%
+The results from simulations show that their proposed routing algorithm can achieve higher delivery ratio and utilize lower energy consumption than original opportunistic routing algorithms especially in sparse network environment.
 
-\begin{homeworkSection}{[Question \#\arabic{homeworkProblemCounter}]} % Section within problem
-% \lipsum[4]\vspace{10pt} % Question
+It is true that by introducing the several mechanisms, the authors’ proposal can achieve the performance in terms of the packet delivery ratio and energy consumption. 
+%%
+
+\begin{homeworkSection}{[Question 1]} % Section within problem
+However, is the opportunistic routing actually applicable in the real situation? 
+%%
+The delivery ratio of 90\% or less is quite insufficient, it is worse that the delivery ratio is much dependent on the network parameters. 
+%%
+It may be the reviewer’s personal opinion. 
+%%
+Thus, the authors should clearly state the actual application scenarios of the proposed method. 
 
 \problemAnswer{ % Answer
-% \lipsum[5]
+
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}{[Question 2]} % Section within problem
+In the paper, the authors refer to the wildlife monitoring. 
+%%
+If it is one application that they suppose, they should consider the simulation model based on it. 
+%%
+The reviewer’s feeling is that the simulation model is too generic, and the readers could not have a confidence that the proposed method is useful. 
+%%
+The same argument can be applied to the predictable behavior of OppNet nodes. 
+%%
+Its applicability must be heavily dependent on the target system.
+%%
+Perhaps a more realistic realization is to use mobile robots to collect information around the field. 
+%%
+Even in the sparse environment, the path planning method can make the delivery ratio of packets higher. 
+%%
+See the related papers.
+
+\problemAnswer{ % Answer
+
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}{[Question 3]} % Section within problem
+In summary, for the paper to be accepted, the authors clearly describe the application of the proposed method, and show the simulation results based on the application scenarios. Also, they should discuss why the proposed method is better than the other methods including the planning method using the mobile robots.
+
+\problemAnswer{ % Answer
+
 }
 \end{homeworkSection}
 
@@ -160,21 +202,61 @@
 %	Reviewer2
 %----------------------------------------------------------------------------------------
 
-% To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-% \lipsum[1]\vspace{10pt} % Question
-% [Question \#\arabic{homeworkProblemCounter}]
 
-\begin{homeworkSection}{[Question \#\arabic{homeworkProblemCounter}]} % Section within problem
-% \lipsum[4]\vspace{10pt} % Question
+This manuscript proposed a concept of rendezvous place for improving delivery ratio and reducing energy consumption in sparse opportunistic networks. 
+%%
+But some details are still unclear.
+
+\begin{homeworkSection}{[Question 1]} % Section within problem
+How long could a message stay in the Rendezvous node buffer, if the Rendezvous node didn’t encounter the target node? 
 
 \problemAnswer{ % Answer
-% \lipsum[5]
+In the opportunistic network environments, a message is commonly embedded with a time-to-live (TTL) parameter which stops the packets from traveling unnecessarily throughout the network \cite{Prodhan2011}. 
+%
+Each message will be dropped once it reach the message deadline in order to clear the messages left on the buffer of Rendezvous node.
+%%
+%In our simulation, we setup the simulation time of 10,800 seconds with the message
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}{[Question 2]} % Section within problem
+If the Rendezvous node can't find the expected node-gathering area for a long time, does it keep moving? In this process, is it broadcasting the Rendezvous Area rumor message (RA)? 
+
+\problemAnswer{ % Answer
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}{[Question 3]} % Section within problem
+Moreover, how does it determine its center location when implementing sweeping algorithm? How do you see the relationship between the period of sweep mechanism and the period of searching Rendezvous place?
+
+\problemAnswer{ % Answer
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}{[Question 4]} % Section within problem
+The Rendezvous node should passively wait for the target node entering the Rendezvous place. Does it harm the efficiency of packet delivery, compared with some latest opportunistic routings?
+
+\problemAnswer{ % Answer
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}{[Question 5]} % Section within problem
+Furthermore, some of the references in the section 2 are too old. And author should choose at least one recent opportunistic routing protocol for comparison in the evaluation.
+
+\problemAnswer{ % Answer
 }
 \end{homeworkSection}
 
 \end{homeworkProblem}
+
+%%%%%%%%%%%%%%%%%%%
+%     References
+%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{abbrv}
+\bibliography{refs}
 
 
 \end{document}
