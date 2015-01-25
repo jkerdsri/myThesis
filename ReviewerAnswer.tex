@@ -164,6 +164,7 @@ Thus, the authors should clearly state the actual application scenarios of the p
 
 }
 \end{homeworkSection}
+%----------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 2]} % Section within problem
 In the paper, the authors refer to the wildlife monitoring. 
@@ -186,6 +187,7 @@ See the related papers.
 
 }
 \end{homeworkSection}
+%----------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 3]} % Section within problem
 In summary, for the paper to be accepted, the authors clearly describe the application of the proposed method, and show the simulation results based on the application scenarios. Also, they should discuss why the proposed method is better than the other methods including the planning method using the mobile robots.
@@ -208,32 +210,63 @@ In summary, for the paper to be accepted, the authors clearly describe the appli
 This manuscript proposed a concept of rendezvous place for improving delivery ratio and reducing energy consumption in sparse opportunistic networks. 
 %%
 But some details are still unclear.
+%----------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 1]} % Section within problem
-How long could a message stay in the Rendezvous node buffer, if the Rendezvous node didn’t encounter the target node? 
+How long could a message stay in the Rendezvous node buffer, if the Rendezvous node didn't encounter the target node? 
 
 \problemAnswer{ % Answer
-In the opportunistic network environments, a message is commonly embedded with a time-to-live (TTL) parameter which stops the packets from traveling unnecessarily throughout the network \cite{Prodhan2011}. 
+In the opportunistic network environments, a message is commonly embedded with a time-to-live (TTL) parameter (or called a message deadline) which stops the packets from traveling unnecessarily throughout the network \cite{Prodhan2011,Yuan2012,Nguyen2009,Khabbaz2012}. 
 %
-Each message will be dropped once it reach the message deadline in order to clear the messages left on the buffer of Rendezvous node.
+Our provious work \cite{Kerdsri2013} has shown that the different value of message deadlines can affect the delivery ratio. 
+%
+In our design, each message will be dropped once it reach the message deadline in order to clear the messages left on the buffer of Rendezvous node.
 %%
-%In our simulation, we setup the simulation time of 10,800 seconds with the message
+If the capacity of data storage in Rendezvous node is fully occupied, then the oldest messages will be dropped once the new messages arrives.
+%%
+In our simulation, we setup the TTL to the simulation time in order to hold the messages in the Rendezvous zone as long as possible.
+%%
+We assume that Rendezvous buffer is large enough to feasible store as many messages waiting to pickup by target nodes.
+%%
+Therefore, the messages will indefinitely stay in the Rendezvous node buffer until the storage is full and the newer messages request the space from the buffer.
 }
 \end{homeworkSection}
+%----------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 2]} % Section within problem
 If the Rendezvous node can't find the expected node-gathering area for a long time, does it keep moving? In this process, is it broadcasting the Rendezvous Area rumor message (RA)? 
 
 \problemAnswer{ % Answer
+In our system, the Rendezvous node will move to a new location if there is insufficient contact from OppNet node within a predefined duration.
+%
+Consequently,the Rendezvous node will situate in the node-gathering area when there is enough number of encountered OppNet nodes.
+%%
+Therefore, the Rendezvous nodes will keep moving until they meet the desired conditions.
+%%
+In addition, in the process of moving, the Rendezvous node will keep broadcasting the Rendezvous Area rumor message ($RA$), so the OppNet nodes can learn that they are in the Rendezvous zone when they detect the $RA$ messages. 
 }
 \end{homeworkSection}
+%----------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 3]} % Section within problem
 Moreover, how does it determine its center location when implementing sweeping algorithm? How do you see the relationship between the period of sweep mechanism and the period of searching Rendezvous place?
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.5in]{Figures/Sweep.pdf}
+\caption{Sweep mechanism}
+\label{Sweep mechanism}
+\end{figure}
+
 \problemAnswer{ % Answer
+The sweeping mechanism is started when the Rendezvous node station in the desire location in order to gain more delivery ratio from the nodes with different transmission range.
+%%
+The center location of Rendezvous for the sweeping algorithm is determined by its radio range since the Rendezvous node can move to 4 direction as in Fig. \ref{Sweep mechanism}.
+%%
+The period of sweep mechanism and searching Rendezvous place are irrelevant since the sweeping always performs when the Rendezvous node is stationed while the period of searching is depended on the encountered OppNet nodes.
 }
 \end{homeworkSection}
+%----------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 4]} % Section within problem
 The Rendezvous node should passively wait for the target node entering the Rendezvous place. Does it harm the efficiency of packet delivery, compared with some latest opportunistic routings?
@@ -241,6 +274,7 @@ The Rendezvous node should passively wait for the target node entering the Rende
 \problemAnswer{ % Answer
 }
 \end{homeworkSection}
+%----------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 5]} % Section within problem
 Furthermore, some of the references in the section 2 are too old. And author should choose at least one recent opportunistic routing protocol for comparison in the evaluation.
