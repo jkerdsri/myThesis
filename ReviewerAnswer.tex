@@ -231,7 +231,7 @@ We assume that Rendezvous buffer is large enough to feasible store as many messa
 Therefore, the messages will indefinitely stay in the Rendezvous node buffer until the storage is full and the newer messages request the space from the buffer.
 }
 \end{homeworkSection}
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 2]} % Section within problem
 If the Rendezvous node can't find the expected node-gathering area for a long time, does it keep moving? In this process, is it broadcasting the Rendezvous Area rumor message (RA)? 
@@ -246,7 +246,7 @@ Therefore, the Rendezvous nodes will keep moving until they meet the desired con
 In addition, in the process of moving, the Rendezvous node will keep broadcasting the Rendezvous Area rumor message ($RA$), so the OppNet nodes can learn that they are in the Rendezvous zone when they detect the $RA$ messages. 
 }
 \end{homeworkSection}
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 3]} % Section within problem
 Moreover, how does it determine its center location when implementing sweeping algorithm? How do you see the relationship between the period of sweep mechanism and the period of searching Rendezvous place?
@@ -266,15 +266,18 @@ The center location of Rendezvous for the sweeping algorithm is determined by it
 The period of sweep mechanism and searching Rendezvous place are irrelevant since the sweeping always performs when the Rendezvous node is stationed while the period of searching is depended on the encountered OppNet nodes.
 }
 \end{homeworkSection}
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 4]} % Section within problem
 The Rendezvous node should passively wait for the target node entering the Rendezvous place. Does it harm the efficiency of packet delivery, compared with some latest opportunistic routings?
 
 \problemAnswer{ % Answer
+In our implementation, the Rendezvous node can move with the \texbf{Sweep mechanism} to gain more chance of meeting the node with less transmission radio range.
+%%
+Thus, this mechanism can increase the performance of packet delivery while most of the recent opportunistic routings such as Throwbox \cite{Zhu2014,Banerjee2010} or passive relay points \cite{Shahbazi2012} which recieving base station are more passively waiting for the contact nodes. 
 }
 \end{homeworkSection}
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 5]} % Section within problem
 Furthermore, some of the references in the section 2 are too old. And author should choose at least one recent opportunistic routing protocol for comparison in the evaluation.
