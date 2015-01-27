@@ -15,9 +15,9 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 \documentclass{article}
 
@@ -26,7 +26,9 @@
 \usepackage{extramarks} % Required for headers and footers
 \usepackage{graphicx} % Required to insert images
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
-
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{automata,positioning}
 % Margins
 \topmargin=-0.45in
 \evensidemargin=0in
@@ -50,10 +52,10 @@
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 %	DOCUMENT STRUCTURE COMMANDS
 %	Skip this unless you know what you're doing
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 % Header and footer for when a page split occurs within a problem environment
 \newcommand{\enterProblemHeader}[1]{
@@ -93,9 +95,9 @@
 \enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
 }
    
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 %	NAME AND CLASS SECTION
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 \newcommand{\hmwkTitle}{Reviewer Comments Answer} % Assignment title
 \newcommand{\hmwkDueDate}{Wednesday,\ January\ 28,\ 2015} % Due date
@@ -104,9 +106,9 @@
 \newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
 \newcommand{\hmwkAuthorName}{Dynamic Rendezvous based Routing Algorithm on Sparse Opportunistic Network Environment: IJDSN/819178.v1 : Jiradett Kerdsri and Komwut Wipusitwarakun} % Your name
 
-%---------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 %	TITLE PAGE
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 \title{
 \vspace{2in}
@@ -119,15 +121,15 @@
 \author{\textbf{\hmwkAuthorName}}
 \date{} % Insert date here if you want it to appear below your name
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 \begin{document}
 
 % \maketitle
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 %\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
 
@@ -135,9 +137,9 @@
 % \tableofcontents
 % \newpage
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 %	Reviewer1
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 % To have just one problem per page, simply put a \clearpage after each problem
 
@@ -161,12 +163,32 @@ It may be the reviewer’s personal opinion.
 Thus, the authors should clearly state the actual application scenarios of the proposed method. 
 
 \problemAnswer{ % Answer
+Commonly, `delivery ratio' is the most important network performance metric in an Opportunistic Network \cite{Gong2013}.
+%%
+A delivery ratio value is defined as the fraction of all generated messages that are successfully transmitted to the destination within a specific time interval.
+%%
+Nevertheless, a message is rarely actually `lost' but in fact, the network was unable to deliver messages within an acceptable amount of time \cite{Muhammad2011}.
+%%
+In our implementation, the messages can be dropped due to 2 cases: the TTL (Time To Live or Deadline) of message exceeds the tolerable delay of our application and the queue of the node buffer is full so some messages have to be dropped.
 
+To the best of our knowledges, most recent well known opportunistic routings \cite{Mingjun2014,Boldrini2007,pan2011,Ting2012,Spyropoulos2005,Spyropoulos2007,Sumathy2011} unable to achieve 100\% delivery ratio due to its extremely challenging environments \cite{Moreira2012}.
+%%
+However, such opportunistic routings have been experimented in the actual application scenarios such as ZebraNet \cite{Juang2002} to monitor the zebras in the Mpala Research Center in central Kenya (wild life monitoring) or SWIM (Shared Wireless Infostation Model) \cite{Haas2006} to gathering the data from radio-tagged whales (biological data acquisition).
+
+Our proposed model is based on the actual application scenarios of wild life tracking or military operation tracking where the movement of nodes are completely random (but moving in groups) in the sparse environment while the connectivities are intermittent.
+%%
+However, we consider the specific behavior of nodes when the nodes might gather in some area such as a river in the case of animals or the food supply location for soldiers in the case of predictable behavior OppNet nodes in our searching algorithms.
+% For example, the simulation scenarios are based on the practical military operation where the node movements are matched with the number of soldier in a platoon.
 }
 \end{homeworkSection}
-%----------------------------------------------------------------------------------------
-
+%------------------------------------------------------------------------------------
 \begin{homeworkSection}{[Question 2]} % Section within problem
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{Figures/TypeOfDTN.tikz}
+\caption{Types of DTN}
+\label{Type of DTN}
+\end{figure} 
 In the paper, the authors refer to the wildlife monitoring. 
 %%
 If it is one application that they suppose, they should consider the simulation model based on it. 
@@ -183,16 +205,49 @@ Even in the sparse environment, the path planning method can make the delivery r
 %%
 See the related papers.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{Figures/Spectrum.pdf}
+\caption{A spectrum of contact schedule predictability}
+\label{A spectrum of contact schedule predictability}
+\end{figure} 
+
 \problemAnswer{ % Answer
 
+It is true that with the predictability capability of receiving nodes, the delivery ratio of packets can be increased.
+%%
+In the DTN (Delay Tolerant Network) researches, there are several proposals of using the concept of mobile robots such as Data MULES \cite{Jain2006,Tseng2013} where the MULES nodes move around a sensor network to gather sensing data or Message-Ferries \cite{Moazzez2013,Zhao2003,Zhao2004,Zhao2005} where the source passes the messages to a moving node that carries it directly to the destination or the DTMN (Delay Tolerant Mobile Network) \cite{Harras2005} with the self configured mobile nodes as a scheduled messenger moving along the design route. 
+
+However, aforementioned controlled mobility algorithms are focus on the scheduled or predictable networks which are subtypes of DTN as in Fig. \ref{Type of DTN}.
+%%
+Our research is focused on the Opportunistic Networks where the movements of mobile nodes are completely random.
+%%
+Therefore, the path planning for a controllable mobile node is extremely difficult as can be seen in Fig. \ref{A spectrum of contact schedule predictability}.
+%%
+Nevertheless, we have shown the concept of path planning with our Predicable behavior OppNet nodes on the Rendezvous place searching algorithms where the movements of the nodes can be predicted and the routing of mobile robots can be planned.
+
+In addition, our simulation model is based on the movements of animals where their movements are in the grouping behavior.
+%%
+We have used the Group movement model instead of common Random Way-point or Random Walk movement models which are the most widely use in the opportunistic routing simulations.
+%%
+The key idea of this paper is to address the randomness and spareness of the extreme environment by creating a Rendezvous or a meeting points where the nodes can efficiently exchange information carried with them without mainly depend on the predictability capability of controllable nodes.
 }
 \end{homeworkSection}
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 \begin{homeworkSection}{[Question 3]} % Section within problem
 In summary, for the paper to be accepted, the authors clearly describe the application of the proposed method, and show the simulation results based on the application scenarios. Also, they should discuss why the proposed method is better than the other methods including the planning method using the mobile robots.
 
 \problemAnswer{ % Answer
+The applications of our proposed method can be deployed as wildlife monitoring or military operation scenario where the movement of the mobile nodes is in a group movement model.
+%%
+Our simulations are based on these scenarios where the operational area is sparse with two different approaches of searching algorithms: planing (Predictable behavior OppNet nodes) and without plan (Non-Predictable behavior OppNet nodes).
+%%
+The benefit of our proposed method comparing to other mobile robots is in the sense that our method does not mainly depend on the controlled mobility algorithms which can subject to the central point of failure (the network is down if the mobile robot cannot function properly).
+%%
+On the contrary, our proposed method aims to create a zone where the mobile nodes can deposit and pickup their messages without having to get contact with each other.
+%%
+Additionally, the planning method can be used with our proposed Rendezvous node if the scenario of mobile nodes can be predicted.
 
 }
 \end{homeworkSection}
@@ -200,9 +255,9 @@ In summary, for the paper to be accepted, the authors clearly describe the appli
 \end{homeworkProblem}
 
 \clearpage
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 %	Reviewer2
-%----------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
 
 
 \begin{homeworkProblem}
@@ -278,11 +333,24 @@ Thus, this mechanism can increase the performance of packet delivery while most 
 }
 \end{homeworkSection}
 %------------------------------------------------------------------------------------
+\begin{figure}[h]
+	\centering
+\input {OppNetDiagram}
+	\caption{Classification of Opportunistic Routing}
+	\label{fig:bg:RoutingInOppNets}
+\end{figure}
 
 \begin{homeworkSection}{[Question 5]} % Section within problem
 Furthermore, some of the references in the section 2 are too old. And author should choose at least one recent opportunistic routing protocol for comparison in the evaluation.
 
 \problemAnswer{ % Answer
+From our literature reviews, we can categorize the opportunistic network routings as in Fig. \ref{fig:bg:RoutingInOppNets}.
+%
+To the best of our knowledge, flooding based routing can gain highest delivery ratio while comsuming the most resources from its broadcasting nature.
+%%
+Therefore, we have choosen Epidemic routing algorithms as our base-line comparision in term of its effieciency in delivery rate.
+%%
+However, from the reviewer's suggestion, we can compare our work to more recent opportunistic routing such as MaxProp, Spray and Wait or Prophet.
 }
 \end{homeworkSection}
 
@@ -291,7 +359,7 @@ Furthermore, some of the references in the section 2 are too old. And author sho
 %%%%%%%%%%%%%%%%%%%
 %     References
 %%%%%%%%%%%%%%%%%%%
-
+\clearpage
 \bibliographystyle{abbrv}
 \bibliography{refs}
 
